@@ -1,0 +1,134 @@
+
+<!DOCTYPE HTML>
+<html>
+{% load static %}
+<head>
+<title>Bidbees | Add New Products </title>
+<link href="{%static 'web/css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all">
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="{%static 'web/js/jquery-1.11.0.min.js' %}"></script>
+<!-- Custom Theme files -->
+<link href="{%static 'web/css/style.css' %}" rel="stylesheet" type="text/css" media="all"/>
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="text/html" />
+<!--Google Fonts-->
+<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="{%static 'web/js/move-top.js' %}"></script>
+<script type="text/javascript" src="{%static 'web/js/easing.js' %}"></script>
+
+</head>
+<body>
+<!-- //end-smoth-scrolling -->
+<!--header start here-->
+<div class="header">
+	<div class="container">
+		<div class="header-main">
+			<div class="logo">
+				<a href="#"> <img src="{%static 'web/images/logo.png' %}" alt="" title="logo"> </a>
+			</div>
+			<div class="head-right">
+			  <div class="top-nav">
+					<span class="menu"> <img src="{%static 'web/images/icon.png' %}" alt=""/></span>
+				<ul class="res">
+					<li><a href="http://127.0.0.1:8000/">Home</a></li>
+					<li><a href="about/">About Us</a></li>
+					<li><a class="active" href="contact/">Contact</a></li>
+				<div class="clearfix"> </div>
+				</ul>
+				<!-- script-for-menu -->
+							 <script>
+							   $( "span.menu" ).click(function() {
+								 $( "ul.res" ).slideToggle( 300, function() {
+								 // Animation complete.
+								  });
+								 });
+							</script>
+			<!-- /script-for-menu -->
+			 </div>
+		    
+			<div class="social">
+				<ul >
+					<li><a class="fa" href="#"> </a></li>
+					<li><a class="tw" href="#"> </a></li>
+					<li><a class="p" href="#"> </a></li>
+				</ul>
+				</div>
+
+			<div class="clearfix"> </div>
+			   <!-- search-scripts -->
+					<script src="{%static 'web/js/classie.js' %}"></script>
+					<script src="{%static 'web/js/uisearch.js' %}"></script>
+						<script>
+							new UISearch( document.getElementById( 'sb-search' ) );
+						</script>
+			  <!-- //search-scripts -->
+		</div>
+		
+		<div class="clearfix"> </div>
+		</div>
+	</div>
+</div>
+<!--header end here-->
+<!--contact start here-->
+<div class="contact">
+	<div class="contact-main">
+	   <div class="container">
+			<div class="contact-top">
+				<h3>Add New Products</h3>
+				<p>Please Provide Following Details About Your Products</p>
+			</div>
+			<div class="contact-bottom">
+				<div class="col-md-7 contact-left">
+					<p>Name</p>
+		             <input type="text" value=""/>
+		            <p>E-mail</p> 
+		             <input type="text" value=""/>
+		            <p>Subject</p>
+		             <input type="text" value=""/>
+		            <p>Phone</p>
+		             <input type="text" value=""/>
+				</div>
+				<div class="col-md-5 contact-right">
+					<p>Messages</p>
+					  <textarea id="textarea"name="textarea"> </textarea>
+		             <input type="submit" value="Send">
+				 </div>
+				 <div class="clearfix"> </div>
+				</div>
+		</div>
+	</div>
+</div>
+
+<!--footer start here-->
+<div class="footer">
+	<div class="container">
+		<div class="footer-main">
+			<div class="col-md-3 footer-grid">
+                <h4><a href="#">Products List</a></h4>
+				<p>Click To View Your Previous products</p>
+            </div></div></div>
+	<div class="copyright">
+	<div class="container">
+		<div class="copy-main">
+			<div class="copy-left">
+                <p>Designed By: <a href="about/" target="-blank">DolphinsCoders &copy; <strong>UOG SKT Sub Campus</strong></a></p>
+			</div>
+			<div class="copy-right"> 
+				<ul>
+					<li><a class="active" href="#">Home</a></li>/
+					<li><a href="about/">About</a></li>/
+					<li><a href="#">Blog</a></li>/
+					<li><a href="contact/">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+        </div>
+<!--footer end here-->
+</body>
+</html>

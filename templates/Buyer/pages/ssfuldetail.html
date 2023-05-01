@@ -1,0 +1,306 @@
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    {% load static %}
+<title>BidBeaverss | Bid Detail</title>
+<link href="{%static 'web/css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all">
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="{%static 'web/js/jquery-1.11.0.min.js' %}"></script>
+<!-- Custom Theme files -->
+<link href="{%static 'web/css/style.css' %}" rel="stylesheet" type="text/css" media="all"/>
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }>
+</script>
+<meta name="keywords" content="" />
+<!--Google Fonts-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+<!-- start-smoth-scrolling -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+	<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+	</script>
+	<style>
+        .thumbnail {
+    height:500px;
+    width:100%;
+}</style>
+
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+</head>
+<body>
+<!-- //end-smoth-scrolling -->
+<!--header start here-->
+<div class="header">
+	<div class="container">
+		<div class="header-main">
+			<div class="logo">
+				<a href=""> <img src="{%static 'web/images/logo.png' %}" alt="" title=""> </a>
+			</div>
+			<div class="head-right">
+			  <div class="top-nav">
+					<span class="menu"> <img src="{%static 'web/images/icon.png' %}" alt=""/></span>
+				<ul class="res">
+					<li>
+                    <a  href="/goprofile/">Dashboard</a></li>
+					<li><a href="/BongoingAuctions/"> Ongoing Auctions    </a></li>
+                    <li><a href="/BpendingAuctions/"> Upcoming Auctions   </a></li>
+                    <li ><a  href="{% url 'logout' %}">Logout</a></li>
+
+				</ul>
+				<!-- script-for-menu -->
+							 <script>
+							   $( "span.menu" ).click(function() {
+								 $( "ul.res" ).slideToggle( 300, function() {
+								 // Animation complete.
+								  });
+								 });
+							</script>
+			<!-- /script-for-menu -->
+			 </div>
+
+
+
+
+
+			  <!-- //search-scripts -->
+		</div>
+
+
+		</div>
+	</div>
+</div>
+<!--header end here-->
+<!--blog start here-->
+<div class="blog">
+	<div class="container">
+		<div class="blog-main">
+			<div class="col-md-9 blog-left">
+				<div class="blog-grids">
+					{% if messages %}
+							{% for message in messages %}
+							<div class="alert {{ message.tags }} alert-dismissible" role="alert">
+								<button type="button" style="color:red" class="close" data-dismiss="alert" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+								<font color="blue">{{ message }}</font>
+							</div>
+							{% endfor %}
+							{% endif %}
+
+					{% for item  in param %}
+					<img src="{{item.image.url}}" class="thumbnail"   alt="">
+                    	<style>
+        .thumbnail {
+    height:400px;
+    width:100%;
+}</style>
+
+					<div class="blog-detail">
+						<h3>{{item.prod_title}}</h3>
+                        <font>Product Description : {{item.prod_description}}</font><br>
+							Product Price : ${{item.prod_price}}<br>
+							Minimum Bid : ${{item.minbid}}<br>
+							Location : {{item.prod_loc}}<br>
+							{% if item.prod_status == 'S' %}
+							Auction Status :<font color="green"> Started</font>
+							{% else %}
+							Auction Status : Not Started
+							{% endif %}
+							<br>
+							{% if item.auction_status == 'F' %}
+							Auction Finished ??<font color="green"> Auction has been Finished</font>
+							{% else %}
+							Auction Finished ?? Auction has not Finished
+							{% endif %}
+							<br>
+							</p>
+
+						{% endfor %}
+
+					</div>
+					<div class="data-line">
+			    	<ul>
+			    		</ul>
+			    </div>
+			   <div class="single-commemts">
+			   	<div class="col-md-2 user">
+					{% for seller in user %}
+							<a href="#"><img src="{{seller.image.url}}" width="100%" alt=""/></a>
+						</div>
+						<div class="col-md-10 user-comment">
+
+							<a href="#"><h4>{{seller.Fname}} {{seller.Lname}}</h4></a>
+							<p>{{seller.user.email}}</p>
+
+
+							<p>Total Sale: {{tsale}}</p>
+
+
+							<p>{{seller.description}}</p>
+
+
+
+					 {% if avgrating > 0.0 and avgrating < 1.0 %}
+                                            <i class="fa fa-fw fa-star-half checked" ></i>
+                                        {% elif avgrating == 1.0 %}
+                                        <i class="fa fa-fw fa-star checked"></i>
+                                        {% elif avgrating > 1.0 and avgrating < 2.0 %}
+                                        <i class="fa fa-fw fa-star checked"></i>
+                                        <i class="fa fa-fw fa-star-half checked"></i>
+                                        {% elif avgrating == 2.0 %}
+                                        <i class="fa fa-fw fa-star checked"></i>
+                                        <i class="fa fa-fw fa-star checked"></i>
+                                        {% elif avgrating > 2.0 and avgrating < 3.0 %}
+                                        <i class="fa fa-fw fa-star checked"></i>
+                                        <i class="fa fa-fw fa-star checked"></i>
+                                        <i class="fa fa-fw fa-star-half checked"></i>
+                                        {% elif avgrating == 3.0 %}
+                                        <i class="fa fa-fw fa-star checked"></i>
+                                        <i class="fa fa-fw fa-star checked"></i>
+                                        <i class="fa fa-fw fa-star checked"></i>
+                                        {% elif avgrating > 3.0 and avgrating < 4.0 %}
+                                        <i class="fa fa-fw fa-star checked"></i>
+                                        <i class="fa fa-fw fa-star checked"></i>
+                                        <i class="fa fa-fw fa-star checked"></i>
+                                         <i class="fa fa-fw fa-star-half checked"></i>
+                                        {% elif avgrating == 4.0 %}
+                                        <i class="fa fa-fw fa-star checked"></i>
+                                        <i class="fa fa-fw fa-star checked"></i>
+                                        <i class="fa fa-fw fa-star checked"></i>
+                                        <i class="fa fa-fw fa-star checked"></i>
+                                        {% elif avgrating > 4.0 and avgrating < 5.0 %}
+                                        <i class="fa fa-fw fa-star checked"></i>
+                                        <i class="fa fa-fw fa-star checked"></i>
+                                        <i class="fa fa-fw fa-star checked"></i>
+                                        <i class="fa fa-fw fa-star checked"></i>
+                                        <i class="fa fa-fw fa-star-half checked"></i>
+                                        {% else %}
+                                        <i class="fa fa-fw fa-star checked"></i>
+                                        <i class="fa fa-fw fa-star checked"></i>
+                                        <i class="fa fa-fw fa-star checked"></i>
+                                        <i class="fa fa-fw fa-star checked"></i>
+                                        <i class="fa fa-fw fa-star checked"></i>
+
+                                        {% endif %}
+
+
+
+						    <div class="user-bwn">
+
+
+
+<br>
+
+
+
+
+
+
+
+							</div>
+
+
+
+
+							<!-- Button trigger modal -->
+
+
+				<style>
+							.checked {
+								color: orange;
+							  }</style>
+							{% endfor %}
+
+
+						</div>
+                  <div class="clearfix"> </div>
+			   </div>
+
+
+
+				</div>
+			</div>
+			<div class="col-md-3 blog-right">
+				<div class="blog-cate">
+                    {% for item in param %}
+				<h3>
+                    <p class="auction-bid"><span class="auction-price current-bid" data-auction-id="2340" data-bid="6" data-status="running"><span class="current auction">Minimum bid:</span> <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol"></span>${{item.minbid}}</span></span> </p></h3>
+				<ul>
+					<div class="summary entry-summary">
+		 <style>
+			.bidbox{
+				 background-color: #1F2C45;
+color: #fff
+			}
+				 </style>
+                        <p class="auction-condition"><font color="black">Auction Start Time :</font> <span class="curent-bid"><font color="green"> {{item.starttime}}</font></span></p>
+						<p id="demo"></p> <br>
+								</p>
+
+                        <p class="auction-bid"><span class="auction-price current-bid" data-auction-id="2340" data-bid="6" data-status="running"><span class="current auction">Auction End Time:</span> <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol"></span><font color="red">{{item.endtime}}</font></span></span> </p>
+
+								<br> <br>
+
+
+
+
+
+
+{% endfor %}
+					</div>
+				</ul>
+			</div>
+
+			</div>
+		 <div class="clearfix"> </div>
+		</div>
+</div>
+<!--blog end here-->
+<!--footer start here-->
+<div class="footer">
+	<div class="container">
+		<div class="footer-main">
+
+
+
+
+		<div class="clearfix"> </div>
+		</div>
+	</div>
+	<div class="copyright">
+	<div class="container">
+		<div class="copy-main">
+			<div class="copy-left">
+				<p>Design By<a href="" target="-blank"> UOG_SKT_Developers</a></p>
+			</div>
+			<div class="copy-right">
+				<ul>
+					<li><a class="active" href="">Home</a></li>/
+					<li><a href="/about/">About</a></l>/
+					<li><a href="/contact/">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<!--footer end here-->
+</body>
+</html>

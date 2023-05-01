@@ -1,0 +1,287 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    {% load static %}
+<title>BidBeaverss </title>
+<link href="{%static 'web/css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all">
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="{%static 'web/js/jquery-1.11.0.min.js' %}"></script>
+<!-- Custom Theme files -->
+<link href="{%static 'web/css/style.css' %}" rel="stylesheet" type="text/css" media="all"/>
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }>
+</script>
+<meta name="keywords" content="Auction Responsive web template, Bootstrap Web Templates, Flat Web Templates, AndriodCompatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<!--Google Fonts-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!-- start-smoth-scrolling -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+	<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+	</script>
+<style>
+.thumbnail {
+    height:300px;
+    width:100%;
+}</style>
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+</head>
+<body>
+<!-- //end-smoth-scrolling -->
+<!--header start here-->
+<div class="header">
+	<div class="container">
+		<div class="header-main">
+			<div class="logo">
+			<a href=""> <img src="{%static 'images/log0_2.png' %}" alt="" title=""> <b></b>BidBeavers</a>
+			</div>
+			<div class="head-right">
+			  <div class="top-nav">
+					<span class="menu"> <img src="{%static 'web/images/icon.png' %}" alt=""/></span>
+				<ul class="res">
+					<li>
+                    <a  href="/goprofile/">Dashboard</a></li>
+					<li><a href="/ongoingAuctions/"> On Auctions    </a></li>
+                    <li><a href="/pendingAuctions/"> Pending Auctions   </a></li>
+                    <li ><a  href="{% url 'logout' %}">Logout</a></li>
+
+				</ul>
+				<!-- script-for-menu -->
+							 <script>
+							   $( "span.menu" ).click(function() {
+								 $( "ul.res" ).slideToggle( 300, function() {
+								 // Animation complete.
+								  });
+								 });
+							</script>
+			<!-- /script-for-menu -->
+			 </div>
+
+
+
+
+
+			  <!-- //search-scripts -->
+		</div>
+
+
+		</div>
+	</div>
+</div>
+<!--header end here-->
+<!--blog start here-->
+<div >
+	<div class="container">
+		<div class="blog-main">
+			<div class="col-md-9 blog-left">
+				<div class="blog-grids">
+					{% if messages %}
+							{% for message in messages %}
+							<div class="alert {{ message.tags }} alert-dismissible" role="alert">
+								<button type="button" style="color:red" class="close" data-dismiss="alert" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+								<font color="blue">{{ message }}</font>
+							</div>
+							{% endfor %}
+							{% endif %}
+
+					{% for item  in param %}
+					<img src="{{item.image.url}}" class="thumbnail"   alt=""><style>
+.thumbnail {
+    height:300px;
+    width:100%;
+}</style>
+					<div class="blog-detail">
+						<a href="#"><h3>{{item.prod_title}}</h3></a>
+						<font>Product Description :</font> {{item.prod_description}}<br>
+							Product Price : ${{item.prod_price}}<br>
+							Minimum Bid : ${{item.minbid}}<br>
+							Location : {{item.prod_loc}}<br>
+							{% if item.prod_status == 'S' %}
+							Auction Status :<font color="green"> Started</font>
+							{% else %}
+							Auction Status : Not Started
+							{% endif %}
+							<br>
+							{% if item.auction_status == 'F' %}
+							Auction Finished ??<font color="green"> Auction has been Finished</font>
+							{% else %}
+							Auction Finished ?? Auction has not Finished
+							{% endif %}
+							<br>
+							</p>
+
+						{% endfor %}
+
+					</div>
+				<h1>Bid Winner Details</h1>
+			   <div class="single-commemts">
+			   	<div class="col-md-2 user">
+					{% for buyer in user %}
+							<a href="#"><img src="{{buyer.image.url}}" width="100%" alt=""/></a>
+						</div>
+						<div class="col-md-10 user-comment">
+
+							<a href="#"><h4>{{buyer.Fname}} {{buyer.Lname}}</h4></a>
+							<p>Email : {{buyer.user.email}}</p>
+							<p>Phone Number : {{buyer.phone_no}}</p>
+							<p><font color="black"> Bid Amount :</font> <font color="green"> $ {{bamount}}</font></p>
+							<p>Total Bids: {{buyer.tbids}}</p>
+							<p>Successful Bids: {{buyer.sbids}}</p>
+							<p>Lost Bids: {{buyer.lbids}}</p>
+
+						    <div class="user-bwn">
+								<br>
+					<li class="dropdown">
+                     <a  class="dropdown-toggle" data-toggle="dropdown">Report Buyer <b class="caret"></b></a>
+                     <ul class="dropdown-menu" style="padding: 15px;min-width: 250px;">
+                        <li>
+                           <div class="row">
+                              <div class="col-md-12">
+                                 <form class="form" role="form" method="post" action="/reportbuyer/" accept-charset="UTF-8" id="login-nav">
+									 {% csrf_token %}
+                                    <div class="form-group">
+                                       Enter the Subject of Report
+                                       <input type="text" class="form-control" id="sub" name="sub" placeholder="subject" required>
+                                    </div>
+                                    <div class="form-group">
+                                       Description
+										<textarea rows="4" cols="50"  class="form-control" id="desc" name="desc" placeholder="Description" required></textarea>
+                                    </div>
+                                 <input type="hidden"value="{{ buyer.user }}"id="usr" name="usr" >
+
+
+									  {% for item  in param %}
+
+
+									 <div class="form-group">
+									 <input type="number" id="userid" name="userid" hidden value="{{item.user_id}}">
+									 <input type="number" id="prod_id" name="prod_id" hidden value="{{item.slug}}">
+									 {% endfor %}
+
+									 </div>
+
+                                    <div class="form-group">
+                                       <button type="submit" class="btn btn-success btn-block">Submit</button>
+                                    </div>
+                                 </form>
+                              </div>
+                           </div>
+                        </li>
+
+                     </ul>
+                  </li>
+							</div>
+				<style>
+							.checked {
+								color: orange;
+							  }</style>
+							{% endfor %}
+
+
+						</div>
+                  <div class="clearfix"> </div>
+
+			   </div>
+<br>
+
+
+			</div>
+
+<div class="container ">
+  <div class="row ">
+    <div class="col-md-8  ">
+      <h2 class="page-header ">Comments</h2>
+        <section class="comment-list">
+          <!-- First Comment -->
+{% for cmt in comment %}
+          <article class="row">
+            <div class="col-md-2 col-sm-2 hidden-xs">
+
+              <img class="img-responsive" src="{{cmt.image.url}}" />
+                <figcaption class="text-center">{{cmt.user.username}}</figcaption>
+
+            </div>
+            <div class="col-md-10 col-sm-10">
+              <div class="panel panel-default arrow left">
+                <div class="panel-body">
+                  <header class="text-left">
+                    <div class="comment-user"><i class="fa fa-user"></i> {{cmt.user.username}}</div>
+                    <time class="comment-date" datetime="16-12-2014 01:05"><i class="fa fa-clock-o"></i>{{cmt.created_date}}</time>
+                  </header>
+                  <div class="comment-post">
+                    <p>
+                      {{cmt.message}}
+                    </p>
+                  </div>
+				<p class="text-right"><a href="{{item.get_remove_comment_url}}" class="btn btn-default btn-sm"><i class="fa fa-reply"></i> Delete</a></p>
+
+                </div>
+              </div>
+            </div>
+          </article>{% endfor %}
+
+        </section>
+    </div>
+  </div>
+</div>
+
+
+
+				</div>
+			</div>
+
+		 <div class="clearfix"> </div>
+		</div>
+</div>
+<!--blog end here-->
+<!--footer start here-->
+<div class="footer">
+	<div class="container">
+
+	</div>
+	<div class="copyright">
+	<div class="container">
+		<div class="copy-main">
+			<div class="copy-left">
+				<p>Design By<a href="" target="-blank"> UOG_SKT_Developers</a></p>
+			</div>
+			<div class="copy-right">
+				<ul>
+					<li><a class="active" href="">Home</a></li>/
+					<li><a href="/about/">About</a></li>/
+
+					<li><a href="/contact/">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<!--footer end here-->
+</body>
+</html>

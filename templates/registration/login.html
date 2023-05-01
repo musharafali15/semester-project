@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+{% load static %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+
+<html>
+{% load static %}
+<head>
+    <title>BidBeaverss | Login </title>
+    <link href="{% static 'web/css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="{%static 'web/js/jquery-1.11.0.min.js' %}"></script>
+    <!-- Custom Theme files -->
+    <link href="{%static 'web/css/style.css' %}" rel="stylesheet" type="text/css" media="all"/>
+    <link rel="stylesheet" href="{%static 'web/css/flexslider.css' %}" type="text/css" media="screen"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Custom Theme files -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);function hideURLbar(){ window.scrollTo(0,1); }>
+
+
+    </script>
+    <!-- start-smoth-scrolling -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{%static 'web/js/move-top.js' %}"></script>
+    <script type="text/javascript" src="{%static 'web/js/easing.js' %}"></script>
+    <script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+
+
+    </script>
+    <style>
+
+	#cover {
+    background: #626fe9 url('{%static 'web/images/background7.jpeg' %}') center center no-repeat;
+    background-size: cover;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+#cover-caption {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+/* only used for background overlay not needed for centering */
+form:before {
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    /*login form backgorund color*/
+    background-color: rgba(133,94,66);
+    z-index: -1;
+    border-radius: 10px;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.bg {
+  /* The image used */
+  background-image:  url('{%static 'web/images/background.jpeg' %}')  ;
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+    </style>
+</head>
+<body>
+<!-- //end-smoth-scrolling -->
+<!--header start here-->
+<div class="header">
+    <div class="container">
+        <div class="header-main">
+            <div class="logo">
+                <a href=""> <img src="{%static 'images/log0_2.png' %}" alt="" title=""> <b></b>BidBeavers</a>
+            </div>
+            <div class="head-right">
+                <div class="top-nav">
+                    <span class="menu"> <img src="{%static 'web/images/icon.png' %}" alt=""/></span>
+                    <ul class="res">
+                        <li><a href="/">Home</a></li>
+                        <li><a></a></li>
+                        <li><a href="/goprofile/">Dashboard</a></li>
+                        <li><a href="/contact/">Contact</a></li>
+                        <li><a class="active" href="/accounts/login/">Login</a></li>
+                    </ul>
+                    <!-- script-for-menu -->
+                    <script>
+							   $( "span.menu" ).click(function() {
+								 $( "ul.res" ).slideToggle( 300, function() {
+								 // Animation complete.
+								  });
+								 });
+
+
+                    </script>
+                    <!-- /script-for-menu -->
+                </div>
+
+                <div class="social">
+                    <ul>
+                        <li><a class="fa" href="https://www.facebook.com/ariz.asif.5"> </a></li>
+                        <li><a class="tw" href="#"> </a></li>
+                        <li><a class="p" href="#"> </a></li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<!--header end here-->
+
+
+<section id="cover" class="min-vh-100 ftco-section contact-section " style="">
+    <div class="container">
+        <div class="row block-9" id="cover-caption">
+            <div class="col-md-6 order-md-last d-flex" style="margin-left:20%;left: 400px;">
+                {% if messages %}
+                <ul class="messages">
+
+                    {% for message in messages %}
+                    <li style="color: green;" {% if message.tags %} class="{{ message.tags }}" {% endif %}>{% if message.tags %} {{ message }} {% endif %}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                <form action="" method='post' id="signup" enctype="multipart/form-data">
+                    <p style="color: snow">Please Enter Your Login Credentials</p>
+                    {% csrf_token %}
+                    {{ form|crispy }}
+
+                    <div class="form-group">
+                        <a class="btn btn-primary" href="/forget/">{% trans "Forgot Password?" %}</a>
+                        <button class="btn btn-primary" type="submit">{% trans "Sign In" %}</button>
+
+                    </div>
+                    <div class="form-group">
+                        <p><a style="color: #e9e9f2" href="/signup/">Don't have an account..Signup.!</a></p>
+                    </div>
+                    <div class="form-row"></div>
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!--<div class="footer">-->
+<!--    <div class="copyright">-->
+<!--        <div class="container">-->
+<!--            <div class="copy-main">-->
+<!--                <span>Developed By: UOG_SKT_Developers </span>-->
+
+<!--                <div class="copy-right">-->
+<!--                    <ul>-->
+<!--                        <li><a class="active" href="/">Home</a></li>-->
+<!--                        /-->
+<!--                        <li><a href="/about/">About</a></li>-->
+<!--                        /-->
+
+<!--                        <li><a href="/contact/">Contact</a></li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--footer end here-->
+</body>
+</html>
+
+
+
+
+
+
+

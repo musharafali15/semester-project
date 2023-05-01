@@ -1,0 +1,457 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    {% load static %}
+<title>BidBeaverss | Product Detail </title>
+<link href="{%static 'web/css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all">
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="{%static 'web/js/jquery-1.11.0.min.js' %}"></script>
+<!-- Custom Theme files -->
+<link href="{%static 'web/css/style.css' %}" rel="stylesheet" type="text/css" media="all"/>
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }>
+</script>
+<meta name="keywords" content="" />
+<!--Google Fonts-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+<!-- start-smoth-scrolling -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+	<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+	</script>
+<style>
+.thumbnail {
+    height:300px;
+    width:100%;
+}</style>
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+</head>
+<body>
+<!-- //end-smoth-scrolling -->
+<!--header start here-->
+<div class="header">
+	<div class="container">
+		<div class="header-main">
+			<div class="logo">
+				<a href=""> <img src="{%static 'images/log0_2.png' %}" alt="" title=""> BidBeavers</a>
+			</div>
+			<div class="head-right">
+			  <div class="top-nav">
+					<span class="menu"> <img src="{%static 'web/images/icon.png' %}" alt=""/></span>
+				<ul class="res">
+					<li>
+                    <a  href="/goprofile/">Dashboard</a></li>
+					<li><a href="/BongoingAuctions/"> On Auctions    </a></li>
+                    <li><a href="/BpendingAuctions/"> Pending Auctions   </a></li>
+                    <li ><a  href="{% url 'logout' %}">Logout</a></li>
+
+				</ul>
+				<!-- script-for-menu -->
+							 <script>
+							   $( "span.menu" ).click(function() {
+								 $( "ul.res" ).slideToggle( 300, function() {
+								 // Animation complete.
+								  });
+								 });
+							</script>
+			<!-- /script-for-menu -->
+			 </div>
+
+
+
+
+
+			  <!-- //search-scripts -->
+		</div>
+
+
+		</div>
+	</div>
+</div>
+    <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home </a></li>
+      <li class="breadcrumb-item">Dashboard</li>
+      <li class="breadcrumb-item active" aria-current="page">Detail</li>
+      <!--
+    <li class="breadcrumb-item"><a href="#">Library</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Data</li>-->
+  </ol>
+</nav>
+<!--header end here-->
+<!--blog start here-->
+<div >
+	<div class="container">
+		<div class="blog-main">
+			<div class="col-md-9 blog-left">
+				<div class="blog-grids">
+					{% if messages %}
+							{% for message in messages %}
+							<div class="alert {{ message.tags }} alert-dismissible" role="alert">
+								<button type="button" style="color:red" class="close" data-dismiss="alert" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+								<font color="blue">{{ message }}</font>
+							</div>
+							{% endfor %}
+							{% endif %}
+
+					{% for item  in param %}
+					<img src="{{item.image.url}}" class="thumbnail"   alt=""><style>
+.thumbnail {
+    height:300px;
+    width:100%;
+}</style>
+					<div class="blog-detail">
+						<a href="#"><h3>{{item.prod_title}}</h3></a>
+						<font>Product Description :</font> {{item.prod_description}}<br>
+							Product Price : ${{item.prod_price}}<br>
+							Minimum Bid : ${{item.minbid}}<br>
+							Location : {{item.prod_loc}}<br>
+							{% if item.prod_status == 'S' %}
+							Auction Status :<font color="green"> Started</font>
+							{% else %}
+							Auction Status : Not Started
+							{% endif %}
+							<br>
+							{% if item.auction_status == 'F' %}
+							Auction Finished ??<font color="green"> Auction has been Finished</font>
+							{% else %}
+							Auction Finished ?? Auction has not Finished
+							{% endif %}
+							<br>
+							</p>
+
+						{% endfor %}
+
+					</div>
+				<h1>Seller Details</h1>
+			   <div class="single-commemts">
+			   	<div class="col-md-2 user">
+					{% for seller in user %}
+							<a href="#"><img src="{{seller.image.url}}" width="100%" alt=""/></a>
+						</div>
+						<div class="col-md-10 user-comment">
+
+							<a href="#"><h4>{{seller.Fname}} {{seller.Lname}}</h4></a>
+							<p>{{seller.user.email}}</p>
+
+
+							<p>Total Sale: {{tsale}}</p>
+
+
+							<p>{{seller.description}}</p>
+
+
+
+					 {% if avgrating > 0.0 and avgrating < 1.0 %}
+                                            <i class="fa fa-fw fa-star-half checked" ></i>
+                                        {% elif avgrating == 1.0 %}
+                                        <i class="fa fa-fw fa-star checked"></i>
+                                        {% elif avgrating > 1.0 and avgrating < 2.0 %}
+                                        <i class="fa fa-fw fa-star checked"></i>
+                                        <i class="fa fa-fw fa-star-half checked"></i>
+                                        {% elif avgrating == 2.0 %}
+                                        <i class="fa fa-fw fa-star checked"></i>
+                                        <i class="fa fa-fw fa-star checked"></i>
+                                        {% elif avgrating > 2.0 and avgrating < 3.0 %}
+                                        <i class="fa fa-fw fa-star checked"></i>
+                                        <i class="fa fa-fw fa-star checked"></i>
+                                        <i class="fa fa-fw fa-star-half checked"></i>
+                                        {% elif avgrating == 3.0 %}
+                                        <i class="fa fa-fw fa-star checked"></i>
+                                        <i class="fa fa-fw fa-star checked"></i>
+                                        <i class="fa fa-fw fa-star checked"></i>
+                                        {% elif avgrating > 3.0 and avgrating < 4.0 %}
+                                        <i class="fa fa-fw fa-star checked"></i>
+                                        <i class="fa fa-fw fa-star checked"></i>
+                                        <i class="fa fa-fw fa-star checked"></i>
+                                         <i class="fa fa-fw fa-star-half checked"></i>
+                                        {% elif avgrating == 4.0 %}
+                                        <i class="fa fa-fw fa-star checked"></i>
+                                        <i class="fa fa-fw fa-star checked"></i>
+                                        <i class="fa fa-fw fa-star checked"></i>
+                                        <i class="fa fa-fw fa-star checked"></i>
+                                        {% elif avgrating > 4.0 and avgrating < 5.0 %}
+                                        <i class="fa fa-fw fa-star checked"></i>
+                                        <i class="fa fa-fw fa-star checked"></i>
+                                        <i class="fa fa-fw fa-star checked"></i>
+                                        <i class="fa fa-fw fa-star checked"></i>
+                                        <i class="fa fa-fw fa-star-half checked"></i>
+                                        {% else %}
+                                        <i class="fa fa-fw fa-star checked"></i>
+                                        <i class="fa fa-fw fa-star checked"></i>
+                                        <i class="fa fa-fw fa-star checked"></i>
+                                        <i class="fa fa-fw fa-star checked"></i>
+                                        <i class="fa fa-fw fa-star checked"></i>
+
+                                        {% endif %}
+
+
+{%  if email == "@gmail.com" %}
+    <p class="reserve hold" data-auction-id="2340"><font color="red"><b>Guest user dont have access to give Rating or Report Seller..!</b> </font></p>
+    {% else %}
+    {{ user.email }}
+						    <div class="user-bwn" >
+								<li class="dropdown" >
+                     <a  href="http://www.jquery2dotnet.com" class="dropdown-toggle" data-toggle="dropdown">Rate the Seller <b  class="caret"></b></a>
+                     <ul class="dropdown-menu" style="padding: 15px;min-width: 250px;">
+                        <li>
+                           <div class="row">
+                              <div class="col-md-12">
+                                 <form  class="form" role="form" method="post" action="/giverating/" accept-charset="UTF-8" id="login-nav">
+									 {% csrf_token %}
+                                    <div class="form-group">
+										<input class="btn btn-primary btn-block" type="button" id="sign-in-google" disabled value="Seller Rating Board">
+									</div>
+									 <div class="form-group">
+									<select class="browser-default custom-select" id="rat" required name="rat" style="margin-left:10%">
+										<option selected >Please Select the Rating</option>
+										<option value="1">One Star</option>
+										<option value="2">Two Stars</option>
+										<option value="3">Three Stars</option>
+										<option value="4">Four Stars</option>
+										<option value="5">Five Stars</option>
+									</select>
+
+
+
+                                    </div>
+									 {% for item  in param %}
+
+
+									 <div class="form-group">
+									 <input type="number" id="userid" name="userid" hidden value="{{item.user_id}}">
+									 <input type="number" id="prod_id" name="prod_id" hidden value="{{item.slug}}">
+									 {% endfor %}
+
+									 </div>
+
+
+
+
+                                    <div class="form-group">
+                                       <button type="submit" class="btn btn-success btn-block">Submit</button>
+                                    </div>
+                                 </form>
+                              </div>
+                           </div>
+                        </li>
+
+
+                     </ul>
+                  </li>
+
+
+<br>
+
+
+
+					<li class="dropdown">
+                     <a  class="dropdown-toggle" data-toggle="dropdown">Report Seller <b class="caret"></b></a>
+                     <ul class="dropdown-menu" style="padding: 15px;min-width: 250px;">
+                        <li>
+                           <div class="row">
+                              <div class="col-md-12">
+                                 <form class="form" role="form" method="post" action="/reportseller/" accept-charset="UTF-8" id="login-nav">
+									 {% csrf_token %}
+                                    c
+                                    <div class="form-group">
+                                       Description
+										<textarea rows="4" cols="50"  class="form-control" id="desc" name="desc" placeholder="Description" required></textarea>
+                                    </div>
+
+
+									  {% for item  in param %}
+
+
+									 <div class="form-group">
+									 <input type="number" id="userid" name="userid" hidden value="{{item.user_id}}">
+									 <input type="number" id="prod_id" name="prod_id" hidden value="{{item.slug}}">
+									 {% endfor %}
+
+									 </div>
+
+                                    <div class="form-group">
+                                       <button type="submit" class="btn btn-success btn-block">Submit</button>
+                                    </div>
+                                 </form>
+                              </div>
+                           </div>
+                        </li>
+
+                     </ul>
+                  </li>
+							</div>
+                        {% endif %}
+				<style>
+							.checked {
+								color: orange;
+							  }</style>
+							{% endfor %}
+
+
+
+						</div>
+
+                  <div class="clearfix"> </div>
+
+			   </div>
+<br>
+				<div class="blog-detail">{% if maxbid %}
+				<h3>Maximum bid:$ {{maxbid}} </h3>
+					{% else %}
+					<h3><p >Maximum bid: $ 0.0 </p></h3>
+					{% endif %}
+				<ul>
+					<div class="summary entry-summary">
+
+						<p id="demo"></p> <br>
+								</p>
+						{% if bid %}
+									{% for item in bid %}
+									<p class="auction-bid"><span class="auction-price current-bid" data-auction-id="2340" data-bid="6" data-status="running"><span class="current auction">Your bid :</span> <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol"> $ </span>{{item.bamount}}</span></span> </p>{% endfor %}
+						{% else %}
+						<p class="auction-bid"><span class="auction-price current-bid" data-auction-id="2340" data-bid="6" data-status="running"><span class="current auction">Your bid :</span> <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol"> $ </span>0.0</span></span> </p>
+						{% endif %}
+								{% for item  in param %}<p class="reserve hold" data-auction-id="2340">Number of Bidders: {{item.nofbidder}}</p>
+											<p class="reserve hold" data-auction-id="2340"><b>Bid will end at :</b><font color="red"> {{item.endtime}}</font></p>
+		    								<p class="reserve hold" data-auction-id="2340">Minimum Bid : ${{item.minbid}}</p>
+								<form class="auction_form cart" action="/bid/" method="post" enctype="multipart/form-data" data-product_id="2340">
+									{% csrf_token %}
+
+								<div class="quantity buttons_added">
+									 <input type="button" value="+" class="plus">
+									<input type="number" id="bid" name="bid" data-auction-id="2340" value="{{item.minbid}}" min="7" step="any" size="3" title="bid" class="input-text qty  bid text left">
+									<input type="button" value="-" class="minus">{% endfor %}
+								</div>
+
+
+									{% for item  in param %}
+									 <div class="form-group">
+									 <input type="number" id="prod_id" name="prod_id" hidden value="{{item.slug}}">
+										 {% endfor %}</div>
+                    {% if email == "@gmail.com" %}
+                   <a href="/changetype/"> <input type="button" value="Bid"></a>
+                    {% else %}
+								<button type="submit">Bid</button>
+                    {% endif %}
+
+									</form>
+					</div>
+				</ul>
+			</div>
+
+<div class="container ">
+  <div class="row ">
+    <div class="col-md-8  ">
+      <h2 class="page-header ">Comments</h2>
+        <section class="comment-list">
+          <!-- First Comment -->
+{% for cmt in comment %}
+          <article class="row">
+            <div class="col-md-2 col-sm-2 hidden-xs">
+
+             {% for item in param %}   <img class="img-responsive" src="{{item.image.url}}" />{% endfor %}
+                <figcaption class="text-center">{{cmt.user.username}}</figcaption>
+
+            </div>
+            <div class="col-md-10 col-sm-10">
+              <div class="panel panel-default arrow left">
+                <div class="panel-body">
+                  <header class="text-left">
+                    <div class="comment-user"><i class="fa fa-user"></i> {{cmt.user.username}}</div>
+                    <time class="comment-date" datetime="16-12-2014 01:05"><i class="fa fa-clock-o"></i>{{cmt.created_date}}</time>
+                  </header>
+                  <div class="comment-post">
+                    <p>
+                      {{cmt.message}}
+                    </p>
+                  </div>
+
+
+                </div>
+              </div>
+            </div>
+          </article>{% endfor %}
+
+        </section>
+    </div>
+  </div>
+</div>
+			   <div class="magsingle-contact">
+
+				   <form method="post" action="/comment/" >
+					   {% csrf_token %}
+			   	<h3>Leave A Comment </h3>
+                   {% if email == "@gmail.com" %}
+                       <font color="red"><b> Guest user dont have access to comment</b></font>
+                   {% else %}
+			    	<textarea  onfocus="this.value = '';" id="comment" name="comment" onblur="if (this.value == '') {this.value = 'Message';}"/>Message</textarea>
+				    {% for item  in param %}
+									 <div class="form-group">
+									 <input type="number" id="prod_id" name="prod_id" hidden value="{{item.slug}}">
+									 {% endfor %}
+			    	<input type="submit"  value="Submit Comment" />
+			   </div>
+                   {% endif %}
+				   </form>
+			</div>
+
+
+				</div>
+			</div>
+
+		 <div class="clearfix"> </div>
+		</div>
+</div>
+<!--blog end here-->
+<!--footer start here-->
+<div class="footer">
+	<div class="container">
+
+	</div>
+	<div class="copyright">
+	<div class="container">
+		<div class="copy-main">
+			<div class="copy-left">
+				<p>Design By<a href="" target="-blank">UOG_SKT_Developers</a></p>
+			</div>
+			<div class="copy-right">
+				<ul>
+					<li><a href="/">Home</a></li>/
+					<li><a href="/about/">About</a></li>/
+					<li><a href="/contact/">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<!--footer end here-->
+</body>
+</html>

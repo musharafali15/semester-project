@@ -1,0 +1,205 @@
+<!DOCTYPE HTML>
+<html>
+{% load static %}
+<head>
+    <title>Bid Beaverss | About US</title>
+    <link href="{%static 'web/css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="{%static 'web/js/jquery-1.11.0.min.js' %}"></script>
+    <!-- Custom Theme files -->
+    <link href="{%static 'web/css/style.css' %}" rel="stylesheet" type="text/css" media="all"/>
+    <!-- Custom Theme files -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }>
+
+    </script>
+    <meta name="keywords" content="AN Auction House for Selling an Buying Products according to thier taste"/>
+    <!--Google Fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'
+          type='text/css'>
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript" src="{%static 'web/js/move-top.js' %}"></script>
+    <script type="text/javascript" src="{%static 'web/js/easing.js' %}"></script>
+    <script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+
+    </script>
+</head>
+<body>
+<!-- //end-smoth-scrolling -->
+<!--header start here-->
+<div class="header">
+    <div class="container">
+        <div class="header-main">
+            <div class="logo">
+                <a href="/"> <img src="{%static 'images/log0_2.png' %}" alt="" title=""> <b></b>BidBeavers</a>
+            </div>
+            <div class="head-right">
+                <div class="top-nav">
+                    <span class="menu"> <img src="{%static 'web/images/icon.png' %}" alt=""/></span>
+                    <ul class="res">
+                        <li><a href="/">Home</a></li>
+                        <li><a class="active" href="">About Us</a></li>
+                        <!--<li><a href="blog.html">Blog</a></li>-->
+                        <li><a href="/contact/">Contact</a></li>
+                        <div class="clearfix"></div>
+                    </ul>
+                    <!-- script-for-menu -->
+                    <script>
+							   $( "span.menu" ).click(function() {
+								 $( "ul.res" ).slideToggle( 300, function() {
+								 // Animation complete.
+								  });
+								 });
+
+                    </script>
+                    <!-- /script-for-menu -->
+                </div>
+
+                <div class="social">
+                    <ul>
+                        <li><a class="fa" href="#"> </a></li>
+                        <li><a class="tw" href="#"> </a></li>
+                        <li><a class="p" href="#"> </a></li>
+                    </ul>
+                </div>
+                <!--
+            <div class="search-box">
+                <div id="sb-search" class="sb-search">
+                    <form>
+                        <input class="sb-search-input" placeholder="Search" type="search" name="search" id="search">
+                        <input class="sb-search-submit" type="submit" value="">
+                        <span class="sb-icon-search"> </span>
+                    </form>
+               </div>
+            </div>-->
+                <div class="clearfix"></div>
+                <!-- search-scripts -->
+                <script src="{%static 'web/js/classie.js' %}"></script>
+                <script src="{%static 'web/js/uisearch.js' %}"></script>
+                <script>
+							new UISearch( document.getElementById( 'sb-search' ) );
+
+                </script>
+                <!-- //search-scripts -->
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<!--header end here-->
+
+<!--start-about-->
+<div class="about">
+    <div class="container">
+        <div class="about-main">
+            <div class="about-top">
+                <h3>About Our Team</h3>
+                <h5>Our Mentor</h5>
+                <p>Rumyana Neykova</p>
+                <p>Department of Computer Science, Brunel University of London</p>
+                <p>Email: rumyana.neykova@brunel.ac.uk</p>
+                <h5>Developer</h5>
+                <P>BidBeaverss Developement Team.</P>
+                <p>Address : 10A, North Pole Road, W10, 6QL</p>
+                <p>phone : +44-7426-470147</p>
+                <p>Email: 1930891@@brunel.ac.uk</p>
+            </div>
+            <div class="about-text">
+                <a href=""><img src="https://accessable.s3.eu-west-2.amazonaws.com/production/uploads/organisation/hero_image/41/resize_Brunel_Uni_Hero_Image.jpg" alt=""></a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+</div>
+<!--end-about-->
+<!--start-team-->
+<!--<div class="team">-->
+<!--    <div class="container">-->
+<!--        <div class="team-main">-->
+<!--            <h3>Our Team</h3>-->
+<!--            <div class="team-top">-->
+<!--                <div class="col-md-4 team-top-left">-->
+<!--                    <img style="width:200px;height: 250px" src="{% static 'web/images/ArizAsif.jpeg' %}">-->
+<!--                    <div class="team-details">-->
+<!--                        <h4>Mr. Ariz Asif</h4>-->
+<!--                        <P>Passionate Developer having Skills in Python's Frameworks, Problem Solving and Web-->
+<!--                            Development</P>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-md-4 team-top-left">-->
+<!--                    <img style="width:200px;height: 250px" src="{% static 'web/images/AfaqAhsan.jpeg' %}" src="">-->
+<!--                    <div class="team-details">-->
+<!--                        <h4>Mr.Afaq Ahsan</h4>-->
+<!--                        <P>Passionate Web Developer having expertise in Web Frameworks and Python </P>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-md-4 team-top-left">-->
+<!--                    <img style="width:200px;height: 250px" src="{% static 'web/images/HafizAbubakr.jpeg' %}" src="">-->
+<!--                    <div class="team-details">-->
+<!--                        <h4>Mr. Hafiz Abu Bakr</h4>-->
+<!--                        <P>Passionate Developer having expertise in Error Finding and Solving</P>-->
+
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="clearfix"></div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--&lt;!&ndash;end-team&ndash;&gt;-->
+<!--&lt;!&ndash;map start here&ndash;&gt;-->
+<!--<div class="map">-->
+<!--    <div class="container">-->
+<!--        <div class="col-md-7 map-left">-->
+<!--            <h3>CONTACT INFO</h3>-->
+<!--            <P>BidBeaverss Developement Team.</P>-->
+<!--            <div class="addre">-->
+<!--                <h4>ADDRESS</h4>-->
+<!--                <p>Address : Main GT Road Daska</p>-->
+<!--                <p>Near Circular Road </p>-->
+<!--                <p>phone : +92322-7379574</p>-->
+<!--                <p>Email: info.Bidbeaverss@gmail.com</p>-->
+<!--                <a href="https://maps.app.goo.gl/HofXkdFYtQR18xW56" target="_blank">Find Us on Google Map</a>-->
+<!--            </div>-->
+<!--        </div>&lt;!&ndash;-->
+<!--		<div class="col-md-5 map-right">-->
+<!--			<iframe src="https://maps.app.goo.gl/HofXkdFYtQR18xW56"> </iframe>-->
+<!--	   </div>&ndash;&gt;-->
+<!--    </div>-->
+<!--</div>-->
+<!--&lt;!&ndash;map end here&ndash;&gt;-->
+<!--&lt;!&ndash;footer start here&ndash;&gt;-->
+<!--<div class="footer">-->
+
+<!--    <div class="copyright">-->
+<!--        <div class="container">-->
+<!--            <div class="copy-main">-->
+<!--                <div class="copy-left">-->
+<!--                    <p>Designed By:UOG_SKT_Developers</p>-->
+<!--                </div>-->
+<!--                <div class="copy-right">-->
+<!--                    <ul>-->
+<!--                        <li><a href="/">Home</a></li>-->
+<!--                        /-->
+<!--                        <li><a href="">About</a></li>-->
+<!--                        /-->
+<!--                        <li><a href="/contact/">Contact</a></li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--footer end here-->
+</body>
+</html>

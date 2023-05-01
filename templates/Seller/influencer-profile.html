@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+
+ {% load static %}
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../static/web/assets/assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link href="../../static/web/assets/assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/web/assets/assets/libs/css/style.css">
+    <link rel="stylesheet" href="../../static/web/assets/assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
+    <title>BidBeaverss | Seller </title>
+    .container {
+  padding: 2rem 0rem;
+}
+
+h4 {
+  margin: 2rem 0rem 1rem;
+}
+
+.table-image {
+  td, th {
+    vertical-align: middle;
+  }
+}
+
+</head>
+
+<body>
+    <!-- ============================================================== -->
+    <!-- main wrapper -->
+    <!-- ============================================================== -->
+    <div class="dashboard-main-wrapper">
+       <!-- ============================================================== -->
+        <!-- navbar -->
+        <!-- ============================================================== -->
+        <div class="dashboard-header">
+                <nav class="navbar navbar-expand-lg bg-white fixed-top">
+                    <a href="/"> <img src="{%static 'images/log0_2.png' %}" alt="" title=""> <b></b>BidBeavers</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto navbar-right-top">
+                            <li class="nav-item">
+                                <br>
+                               <a href="/ongoingAuctions/">On going Auctions<i class="fas fa-sync fa-spin"></i>&nbsp;&nbsp;&nbsp;</a>
+                            </li>
+                            <li class="nav-item">
+                                <br>
+                               <a href="/pendingAuctions/"> Pending Auctions   &nbsp;&nbsp;&nbsp; </a>
+                            </li>
+                             <li class="nav-item">
+                                <br>
+                               <a href="/finishedAuctions/"> Finished Auctions   &nbsp; </a>
+
+                            </li>
+                           
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown nav-user">
+                                <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../../static/web/assets/assets/images/avatar-1.jpg" alt="" class="user-avatar-md rounded-circle"></a>
+                                <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
+                                    <div class="nav-user-info">
+                                        <h5 class="mb-0 text-white nav-user-name">{{user.username}} </h5>
+                                        <span class="status"></span><span class="ml-2">Available</span>
+                                    </div>
+                                  
+                                    <a class="dropdown-item" href="{% url 'logout' %}"><i class="fas fa-power-off mr-2"></i>Logout</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        <!-- ============================================================== -->
+        <!-- end navbar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- left sidebar -->
+        <!-- ============================================================== -->
+        <div class="nav-left-sidebar sidebar-dark">
+            <div class="menu-list">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="d-xl-none d-lg-none" href="">Dashboard</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav flex-column">
+                            <li class="nav-divider">
+                                Menu
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"><i class="fa fa-fw fa-user-circle"></i>Dashboard <i class="icon-dashboard"></i><span class="badge badge-success">6</span></a>
+                                <div id="submenu-1" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="/pages/form-validation">Add Product <i class="fa fa-product-hunt" aria-hidden="true"></i></a>
+<!--                                            <a class="nav-link" href="/dashboard/seller">Seller Dashboard <i class="fa fa-product-hunt" aria-hidden="true"></i></a>-->
+                                        </li>
+                                        <!--
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="">Sale Table</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="">Reviews</a>
+                                        </li>-->
+                                    </ul>
+                                </div>
+
+
+                            </li>
+
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-5"><i class="fas fa-fw fa-table"></i>Setting<i class="fas fa-cog fa-spin"></i></a>
+                                <div id="submenu-5" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                        <a class="nav-link" href="/changepass/">Change Password  <i class="fa fa-key" aria-hidden="true"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end left sidebar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- wrapper  -->
+        <!-- ============================================================== -->
+        <div class="dashboard-wrapper">
+            <div class="influence-profile">
+                <div class="container-fluid dashboard-content ">
+                    <!-- ============================================================== -->
+                    <!-- pageheader -->
+                    <!-- ============================================================== -->
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="page-header">
+                                <h3 class="mb-2">Seller Profile </h3>
+                                <div class="page-breadcrumb">
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="" class="breadcrumb-link">Dashboard</a></li>
+                                            <li class="breadcrumb-item active" aria-current="page">Seller Profile </li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- end pageheader -->
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- content -->
+                    <!-- ============================================================== -->
+                    <div class="row">
+                        <!-- ============================================================== -->
+                        <!-- profile -->
+                        <!-- ============================================================== -->
+                        <div class="col-xl-3 col-lg-3 col-md-5 col-sm-12 col-12">
+                            <!-- ============================================================== -->
+                            <!-- card profile -->
+                            <!-- ============================================================== -->
+                            <div class="card">
+                                {% for item in param %}
+                                <div class="card-body">
+
+                                    <div class="user-avatar text-center d-block">
+                                        <img src="{{item.image.url}}" alt="User Avatar" class="rounded-circle user-avatar-xxl">
+                                    </div>
+                                    <div class="text-center">
+                                        <h2 class="font-24 mb-0">{{item.Fname}} {{item.Lname}}</h2>
+                                        <p>Seller</p>
+
+                                        <p>{{ error }}</p>
+                                    </div>
+                                </div>
+                                <div class="card-body border-top">
+                                    <h3 class="font-16">Contact Information</h3>
+                                    <div class="">
+                                        <ul class="list-unstyled mb-0">
+                                        <li class="mb-2"><i class="fas fa-fw fa-envelope mr-2"></i>{{user.email}}</li>
+                                        <li class="mb-0"><i class="fas fa-fw fa-phone mr-2"></i>{{item.phone_no}}</li>
+                                    </ul>
+                                    </div>
+                                </div>
+                                <div class="card-body border-top">
+                                    <h3 class="font-16">Rating</h3>
+                                    <h1 class="mb-0">{{avgrating}}</h1>
+                                    <div class="rating-star" id="rate">
+                                        {% if avgrating > 0.0 and avgrating < 1.0 %}
+                                            <i class="fa fa-fw fa-star-half"></i>
+                                        {% elif avgrating == 1.0 %}
+                                        <i class="fa fa-fw fa-star"></i>
+                                        {% elif avgrating > 1.0 and avgrating < 2.0 %}
+                                        <i class="fa fa-fw fa-star"></i>
+                                        <i class="fa fa-fw fa-star-half"></i>
+                                        {% elif avgrating == 2.0 %}
+                                        <i class="fa fa-fw fa-star"></i>
+                                        <i class="fa fa-fw fa-star"></i>
+                                        {% elif avgrating > 2.0 and avgrating < 3.0 %}
+                                        <i class="fa fa-fw fa-star"></i>
+                                        <i class="fa fa-fw fa-star"></i>
+                                        <i class="fa fa-fw fa-star-half"></i>
+                                        {% elif avgrating == 3.0 %}
+                                        <i class="fa fa-fw fa-star"></i>
+                                        <i class="fa fa-fw fa-star"></i>
+                                        <i class="fa fa-fw fa-star"></i>
+                                        {% elif avgrating > 3.0 and avgrating < 4.0 %}
+                                        <i class="fa fa-fw fa-star"></i>
+                                        <i class="fa fa-fw fa-star"></i>
+                                        <i class="fa fa-fw fa-star"></i>
+                                         <i class="fa fa-fw fa-star-half"></i>
+                                        {% elif avgrating == 4.0 %}
+                                        <i class="fa fa-fw fa-star"></i>
+                                        <i class="fa fa-fw fa-star"></i>
+                                        <i class="fa fa-fw fa-star"></i>
+                                        <i class="fa fa-fw fa-star"></i>
+                                        {% elif avgrating > 4.0 and avgrating < 5.0 %}
+                                        <i class="fa fa-fw fa-star"></i>
+                                        <i class="fa fa-fw fa-star"></i>
+                                        <i class="fa fa-fw fa-star"></i>
+                                        <i class="fa fa-fw fa-star"></i>
+                                        <i class="fa fa-fw fa-star-half"></i>
+                                        {% else %}
+                                        <i class="fa fa-fw fa-star"></i>
+                                        <i class="fa fa-fw fa-star"></i>
+                                        <i class="fa fa-fw fa-star"></i>
+                                        <i class="fa fa-fw fa-star"></i>
+                                        <i class="fa fa-fw fa-star"></i>
+
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                
+                                
+                            </div>
+                            {% endfor %}
+                            <!-- ============================================================== -->
+                            <!-- end card profile -->
+                            <!-- ============================================================== -->
+                        </div>
+                        <!-- ============================================================== -->
+                        <!-- end profile -->
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                        <!-- campaign data -->
+                        <!-- ============================================================== -->
+                        <div class="col-xl-9 col-lg-9 col-md-7 col-sm-12 col-12">
+                            <!-- ============================================================== -->
+                            <!-- campaign tab one -->
+                            <!-- ============================================================== -->
+                            <div class="influence-profile-content pills-regular">
+                                <ul class="nav nav-pills mb-3 nav-justified" id="pills-tab" role="tablist">
+                                </ul>
+                                <div class="tab-content" id="pills-tabContent">
+                                    <div class="tab-pane fade show active" id="pills-campaign" role="tabpanel" aria-labelledby="pills-campaign-tab">
+                                        <div class="row">
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                <div class="section-block">
+                                                    <h3 class="section-title">My State</h3>
+                                                </div>
+                                            </div>
+                                            <!---Total Auction -->
+                                            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h1 class="mb-1">{{tcount}}</h1>
+                                                        <p>Total Auctions</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!---Total Auction End here-->
+                                            <!--Successful Auctions-->
+                                            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h1 class="mb-1">{{scount}}</h1>
+                                                        <p>Successfull Auctions</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--Successful Auction End here-->
+ <!--OnGoing Auction Going here-->
+          <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h1 class="mb-1">{{oncount}}</h1>
+                                                        <p>OnGoing Auctions</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+<!--Ongoing Auction End Here--->
+         <!--Pending Auction Going here-->
+                   <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h1 class="mb-1">{{pcount}}</h1>
+                                                        <p>Pending Auctions</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+<!--Pending Auction End here-->
+
+
+
+                                </div>
+ <div class="card">
+ <div class="card-header">
+ <h4>Product Conditions</h4></div>
+  <div class="row">
+    <div class="col-12">
+		<table class="table table-image table-hover table-bordered table-sm">
+		   <caption>*S : Start, *NS:  Not Started, *F:Finished, *NF: Not Finished</caption>
+            <thead>
+		    <tr>
+		      <th scope="col">Sr.No</th>
+		      <th scope="col">Image</th>
+		      <th scope="col">Product Title</th>
+		      <th scope="col">Product ID</th>
+		      <th scope="col">Product Status</th>
+		      <th scope="col">Auction Status</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+          {% if totalcount %}
+          {% for item in totalcount %}
+		    <tr>
+		      <th scope="row">{{ forloop.counter0 }}</th>
+		      <td class="w-25">
+			      <img src="{{item.image.url}}" class="img-fluid img-thumbnail" alt="Sheep">
+		      </td>
+		      <td>{{item.prod_title}}</td>
+		      <td>{{ item.slug }}</td>
+		      <td>{{ item.prod_status }}</td>
+		      <td>{{ item.auction_status }}</td>
+		    </tr>
+{% endfor %}
+
+          {% else %}
+
+              <p style="color: red">Sorry You have no Sale Item </p>
+          {% endif %}
+
+		  </tbody>
+		</table>
+    </div>
+  </div>
+</div>
+                            </div>
+                            <!-- ============================================================== -->
+                            <!-- end campaign tab one -->
+                            <!-- ============================================================== -->
+                        </div>
+                        <!-- ============================================================== -->
+                        <!-- end campaign data -->
+                        <!-- ============================================================== -->
+                    </div>
+
+                </div>
+
+
+            </div>
+            <!-- ============================================================== -->
+            <!-- end content -->
+            <!-- ============================================================== -->
+
+        </div>
+        <!-- ============================================================== -->
+        <!-- end wrapper -->
+        <!-- ============================================================== -->
+
+    </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- end main wrapper -->
+    <!-- ============================================================== -->
+    <!-- Optional JavaScript -->
+    <!-- jquery 3.3.1  -->
+    <script src="../../static/web/assets/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+    <!-- bootstap bundle js -->
+    <script src="../../static/web/assets/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <!-- slimscroll js -->
+    <script src="../../static/web/assets/assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+    <!-- main js -->
+    <script src="../../static/web/assets/assets/libs/js/main-js.js"></script>
+   
+</body>
+ 
+</html>

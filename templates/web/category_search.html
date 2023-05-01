@@ -1,0 +1,519 @@
+
+<!DOCTYPE HTML>
+<html>
+{% load static %}
+<head>
+<title>BidBeaverss | Product Category</title>
+    <!--Fevicon-->
+<link rel="shortcut icon" href="{% static 'favicon.ico'%}">
+<link rel="manifest" href="{% static 'manifest.json'%}">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+    <!---->
+<link href="{% static 'web/css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all">
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="{%static 'web/js/jquery-1.11.0.min.js' %}"></script>
+<!-- Custom Theme files -->
+<link href="{%static 'web/css/style.css' %}" rel="stylesheet" type="text/css" media="all"/>
+<link rel="stylesheet" href="{%static 'web/css/flexslider.css' %}" type="text/css" media="screen" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);function hideURLbar(){ window.scrollTo(0,1); }> </script>
+<!-- start-smoth-scrolling -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="{%static 'web/js/move-top.js' %}"></script>
+<script type="text/javascript" src="{%static 'web/js/easing.js' %}"></script>
+	<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+	</script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+
+<!--Icons Library-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+
+<!--Icons Library-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+    <style>
+    .asteriskField{
+        display: none;
+    }
+    form.alert ul li{
+        list-style: none;
+    }
+    form.alert ul{
+        padding: 0;
+        margin: 0;
+    }
+    div[class*="col-"] {
+  float: left; }
+
+.no-padding {
+  padding: 0 !important; }
+
+.bg-flat-color-1 {
+  background: #20a8d8; }
+
+.bg-flat-color-2 {
+  background: #63c2de; }
+
+.bg-flat-color-3 {
+  background: #ffc107; }
+
+.bg-flat-color-4 {
+  background: #f86c6b; }
+
+.bg-flat-color-5 {
+  background: #4dbd74; }
+
+
+/* Global Styles */
+/* Main Styles */
+.card {
+  margin-bottom:24px;
+  margin-bottom: 1.5rem;
+  border-radius: 0; }
+  .card h4 {
+    font-size:17.6px;
+    font-size: 1.1rem; }
+  .card .user-header .media img {
+    border: 5px solid rgba(57, 247, 219, 0.57);
+    border-radius: 50%;
+    -webkit-border-radius: 50%; }
+  .card .card-header .card-actions button {
+    display: block;
+    float: left;
+    width: 50px;
+    padding:12px 0;
+    padding: 0.75rem 0;
+    margin: 0 !important !important;
+    color: #fff;
+    outline: 0;
+    text-align: center;
+    background: transparent;
+    border: 0;
+    border-left: 1px solid rgba(120, 130, 140, 0.4); }
+  .card .card-footer {
+    padding:10.4px 20px;
+    padding: 0.65rem 1.25rem;
+    background-color: #f0f3f5;
+    border-top: 1px solid #c2cfd6; }
+    .card .card-footer ul li {
+      display: table-cell;
+      padding:0 16px;
+      padding: 0 1rem;
+      text-align: center; }
+
+/*    Widget One
+---------------------------*/
+.dib {
+  display: inline-block; }
+
+.stat-widget-one .stat-icon {
+  vertical-align: top; }
+
+.stat-widget-one .stat-icon i {
+  font-size: 30px;
+  border-width: 3px;
+  border-style: solid;
+  border-radius: 100px;
+  padding: 15px;
+  font-weight: 900;
+  display: inline-block; }
+
+.stat-widget-one .stat-content {
+  margin-left: 30px;
+  margin-top: 7px; }
+
+.stat-widget-one .stat-text {
+  font-size: 14px;
+  color: #868e96; }
+
+.stat-widget-one .stat-digit {
+  font-size: 24px;
+  color: #373757; }
+
+
+@media (max-width: 1368px) {
+  .stat-widget-one .stat-content {
+    margin-left: 15px; }
+  .card-body {
+    padding: 15px; }}
+</style>
+</head><style>
+.bidbox{
+					 background-color: #1F2C45;
+                    color: #fff    ; }
+
+
+// non-related styling:
+body{
+  background: #333;
+  color: #ddd;
+}
+h1{
+  color: white;
+  font-size: 2.25em;
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  text-shadow: 0px 2px 0px rgba(0, 0, 0, 1);
+}
+
+</style>
+
+<body>
+<!-- //end-smoth-scrolling -->
+<!--header start here-->
+<div class="header">
+	<div class="container">
+		<div class="header-main">
+			<div  class="logo ">
+				<a href=""> <img src="{%static 'images/log0_2.png' %}" alt="" title=""> <b></b>BidBeavers</a>
+                <!--<p style="color:#fff; font-size: 160%">Bid Beavers </p>-->
+			</div>
+			<div class="head-right">
+			  <div class="top-nav">
+				<!--<span class="menu"> <img src="{%static 'web/images/icon.png' %}" alt=""/></span>-->
+				<ul class="res">
+					<li><a class="" href="/">Home</a></li>
+
+                    <li ><a href="/goprofile/">Dashboard</a></li>
+					<li><a href="contact/">Contact</a></li>
+
+					 {% if request.user.is_authenticated %}
+
+    <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
+          <ul class="dropdown-menu settings-menu dropdown-menu-right">
+            <!--<li><a class="dropdown-item" href="{% url 'password_change' %}"><i class="fa fa-key fa-lg"></i> Change <br>  Passoword</a></li>-->
+              <li><a class="dropdown-item" ><i class="fa fa-user-circle-o"></i> {{ user.username }} </a></li>
+              <li><a class="dropdown-item" href="{% url 'logout' %}"><i class="fa fa-sign-out"></i> Logout </a></li>
+          </ul>
+        </li>
+                     {% else %}
+					<li><a href="/accounts/login/"><i class="fa fa-sign-in fa-lg"></i> Login</a></li>
+					{% endif %}<div class="btn-group">
+    <	</ul>
+				<!-- script-for-menu -->
+							 <script>
+							   $( "span.menu" ).click(function() {
+								 $( "ul.res" ).slideToggle( 300, function() {
+								 // Animation complete.
+								  });
+								 });
+							</script>
+			<!-- /script-for-menu -->
+			 </div>
+		    
+			<div class="social">
+				<ul >
+					<li><a class="fa" href="https://www.facebook.com/ariz.asif.5"> </a></li>
+					<li><a class="tw" href="#"> </a></li>
+					<li><a class="p" href="#"> </a></li>
+				</ul>
+				</div>
+
+                <div class="search-box">
+				<div id="sb-search" class="sb-search">
+					<form action="/search/" method="get" enctype="multipart/form-data">
+                        {% csrf_token %}
+						<input class="sb-search-input"type="search" placeholder="Enter Seach Keywords" name="search" id="search">
+						<input class="sb-search-submit" type="submit">
+						<span class="sb-icon-search"> </span>
+					</form>
+			   </div>
+			</div>
+			   <!-- search-scripts -->
+					<script src="{%static 'web/js/classie.js' %}"></script>
+					<script src="{%static 'web/js/uisearch.js' %}"></script>
+						<script>
+							new UISearch( document.getElementById( 'sb-search' ) );
+						</script>
+			  <!-- //search-scripts -->
+		</div>
+		
+		<div class="clearfix"> </div>
+		</div>
+	</div>
+</div>
+<!--header end here-->
+<!--banner strip end here-->
+<div  class="banner-strip bg-light text-dark" >
+    <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Categories / {{ category }}</li>
+      <!--
+
+    <li class="breadcrumb-item active" aria-current="page">Data</li>-->
+  </ol>
+</nav>
+</div>
+<!--services start here-->
+
+			<div class="services-bottom">
+            	<div class="project-top">
+				<h3>{{ category }} Products <i class="fa fa-product-hunt" aria-hidden="true"></i></h3>
+			</div>
+				<div class="row">
+                    {% for item in prod %}
+                      {%   if forloop.counter  < 7  %}
+					  <div class="col-sm-3 col-xs-3  col-2 col-md-2 ser">
+					<div class="thumbnail">
+                        <a >
+                            <img src="{{item.image.url}}" alt="..." class="img-thumbnail"></a>
+					  <div class="caption">
+					    <a href="/detail_prod/{{item.slug}}/" ><h3>{{item.prod_title}}</h3></a>
+                          <p></p>
+                          <!--<p>{{item.prod_description}}</p>-->
+					  </div>
+					</div>
+					<bidbox>
+						<span class="price"><span class="auction-price current-bid" data-auction-id="2342" data-bid="900000000" data-status="running"><span class="current auction">Minimum Bid</span> <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>{{item.minbid}}</span></span></span>
+				 </bidbox>
+
+					  </div>
+                        {% endif %}
+                    {% endfor %}
+			</div>
+		</div>
+
+
+<!--
+<div class="services">
+	<div class="container">
+		<div class="services-main">
+			<div class="services-top">
+				<h3>Top Auctions</h3>
+				<p>Bid for the best product!</p>
+			</div>
+{% for item in prod %}
+			<div class="services-bottom">
+				<div class="row">
+					  <div class="col-sm-6 col-md-4 ser">
+					<div class="thumbnail">
+					  <a href="single/"><img src="{{item.image.url}}" alt=""></a>
+					  <div class="caption">
+					    <a href="single/"><h3>Product1</h3></a>
+					    <p> OFFICIAL✔️SAVE ON MARKDOWN✔️BEST SELLER </p> <bidbox>
+							<span class="price"><span class="auction-price current-bid" data-auction-id="2342" data-bid="900000000" data-status="running"><span class="current auction">Current bid:</span> <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>200</span></span></span>
+					 </bidbox>
+
+					 <p id="dem">2 days left</p>
+            <div></div></div></div></div>
+			</div>
+		{% endfor %}
+            </div>
+           	</div>
+</div>-->
+<!--services end here-->
+<!--fetures start here-->
+
+</div>
+
+
+
+
+
+
+
+<!--
+<div class="purchase">
+	<div class="container">
+		<div class="purchase-main">
+			<div class="purchase-left">
+				<h3>Best products from all over the world</h3>
+					</div>
+			<div class="purchase-right">
+				<a href="product_list/" class="hvr-shutter-out-horizontal">See More</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+-->
+
+
+
+<!--features end here-->
+<!--effec start here-->
+
+<!--effec end here-->
+<!--project star here-->
+<link rel="stylesheet" type="text/css" href="{%static 'web/css/magnific-popup.css' %}">
+
+<div class="project">
+	<div class="container">
+		<div class="project-main">
+			<div class="project-top">
+				<h3>Ongoing Auctions <i class="fas fa-bullhorn"></i></h3>
+                <h5>Products</h5>
+			</div>
+			<div class="project-bottom      ">
+                 {% for item in prod1 %}
+                  {%   if forloop.counter  < 5  %}
+
+				<div class="col-md-3 project-grid">
+						<div class="project-eff">
+						<div id="nivo-lightbox-demo"> <p> <a href="{{item.image.url}}" data-lightbox-gallery="gallery1" id="nivo-lightbox-demo"> <span class="rollover1"> </span></a> </p></div>
+									  	<img class="img-responsive" src="{{item.image.url}}" alt="">
+							  </div>
+                   		<div class="project-details">
+							<h4>{{item.prod_title}}</h4>
+							<p>{{item.prod_description}}</p>
+						</div>
+						<bidbox>
+							<span class="price"><span class="auction-price current-bid" data-auction-id="2342" data-bid="900000000" data-status="running">
+                                <span class="current auction">Minimum Bid :</span> <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>{{item.prod_price}}</span></span></span>
+					 </bidbox>
+
+					 <p id="demo6"></p>
+					</div>
+
+                {% endif %}
+            {% endfor %}
+
+
+
+
+
+
+			<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!--project end here-->
+<!--clients start here-->
+
+<!-- FlexSlider -->
+
+
+
+
+
+			<!-- FlexSlider -->
+<!--clients end here-->
+<!--purchase start here-->
+
+<!--purchase end here-->
+<!--footer start here-->
+<!--
+<div class="footer">
+	<div class="container">
+		<div class="footer-main">
+			<div class="col-md-3 footer-grid">
+				<h3>About us</h3>
+				<p>About your Services</p>
+			</div>
+
+			<div class="col-md-3 footer-grid">
+				<h3></h3>
+				<ul>
+			
+				</ul>
+			</div>
+			<div class="col-md-3 footer-grid">
+				<h3>Recommended Products</h3>
+				<div class="ftr-gd4-img">
+                    {% for item in prod %}
+                    {%   if forloop.counter  < 5  %}
+				    <div class="col-md-3 ftr-gd4-1"><a href="#"><img width="55px" height="55px" src="{{ item.image.url }}" alt=""></a></div>
+                    {% endif %}
+                {% endfor %}
+
+				  <div class="clearfix"> </div>
+				</div>
+				<div class="ftr-gd4-img">
+                     {% for item in prod %}
+                    {%   if forloop.counter  > 4 and forloop.counter < 9  %}
+				    <div class="col-md-3 ftr-gd4-1"><a href="#"><img width="55px" height="55px" src="{{ item.image.url }}" alt=""></a></div>
+				     {% endif %}
+                {% endfor %}
+				  <div class="clearfix"> </div>
+				</div>
+				<div class="ftr-gd4-img">
+				    {% for item in prod %}
+                    {%   if forloop.counter  > 8 and forloop.counter < 13  %}
+				    <div class="col-md-3 ftr-gd4-1"><a href="#"><img width="55px" height="55px" src="{{ item.image.url }}" alt=""></a></div>
+				     {% endif %}
+                {% endfor %}
+				  <div class="clearfix"> </div>
+				</div>
+			</div>
+		<div class="clearfix"> </div>
+		</div>
+	</div>-->
+<!--footer start here-->
+<div class="footer">
+	<div class="container">
+		<div class="footer-main">
+
+			<div class="col-md-2 footer-grid">
+				<h3>Categories <i class="fa fa-list-alt" aria-hidden="true"></i></h3>
+				<ul>{% for item in unique %}
+					<li><a href="/cat/{{ item }}/">{{item}}</a></li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="copyright">
+	<div class="container">
+		<div class="copy-main">
+			<span>Developed By: UOG_SKT_Developers<i class="fab fa-dev"></i>
+			<div class="copy-right"> 
+				<ul>
+					<li><a class="active" href="/">Home</a></li>/
+					<li><a href="about/">About</a></li>/
+			
+					<li><a href="contact/">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+<!--footer end here-->
+
+
+
+
+</body>
+</html>

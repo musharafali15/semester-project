@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+</head>
+<body>
+ {{error}}
+<form action="http://127.0.0.1:8000/login/" method="post">
+    {% csrf_token%}
+
+    Enter Username<input type="text" id="uname" name="uname" ><br><br>
+    Enter Password<input type="password" id="pas" name="pas"><br><br>
+
+    <button><a href="http://127.0.0.1:8000/login">login</a></button><br><br>
+    <h ><a href="http://127.0.0.1:8000/forget">Forget Password..?</a></h>
+    <h style="margin-left:3%"><a href="http://127.0.0.1:8000/signup">Sing Up</a></h>
+</form>
+
+
+</body>
+</html>

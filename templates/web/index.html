@@ -1,0 +1,985 @@
+
+<!DOCTYPE HTML>
+<html>
+{% load static %}
+<head>
+<title>Blockchain based online auction house</title>
+<link href="{% static 'web/css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all">
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="{%static 'web/js/jquery-1.11.0.min.js' %}"></script>
+<!-- Custom Theme files -->
+<link href="{%static 'web/css/style.css' %}" rel="stylesheet" type="text/css" media="all"/>
+<link rel="stylesheet" href="{%static 'web/css/flexslider.css' %}" type="text/css" media="screen" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);function hideURLbar(){ window.scrollTo(0,1); }>
+</script>
+<!-- start-smoth-scrolling -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="{%static 'web/js/move-top.js' %}"></script>
+<script type="text/javascript" src="{%static 'web/js/easing.js' %}"></script>
+	<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+	</script>
+</head>
+<body>
+<!-- //end-smoth-scrolling -->
+<!--header start here-->
+<div class="header">
+	<div class="container">
+		<div class="header-main">
+			<div class="logo">
+				<p style="color:#fff; font-size: 160%">   BidBees </p>
+			</div>
+			<div class="head-right">
+			  <div class="top-nav">
+					<span class="menu"> <img src="{%static 'web/images/icon.png' %}" alt=""/></span>
+				<ul class="res">
+					<li><a class="active" href="http://127.0.0.1:8000/">Home</a></li>
+                    <li><a></a></li>
+                    <li ><a href="dashboard/seller">Dashboard</a></li>
+					<li><a href="contact/">Contact</a></li>
+					<li><a href="login/">Login</a></li>
+				</ul>
+				<!-- script-for-menu -->
+							 <script>
+							   $( "span.menu" ).click(function() {
+								 $( "ul.res" ).slideToggle( 300, function() {
+								 // Animation complete.
+								  });
+								 });
+							</script>
+			<!-- /script-for-menu -->
+			 </div>
+		    
+			<div class="social">
+				<ul >
+					<li><a class="fa" href="https://www.facebook.com/ariz.asif.5"> </a></li>
+					<li><a class="tw" href="#"> </a></li>
+					<li><a class="p" href="#"> </a></li>
+				</ul>
+				</div>
+			<div class="search-box">
+				<div id="sb-search" class="sb-search">
+					<form>
+						<input class="sb-search-input" placeholder="Search" type="search" name="search" id="search">
+						<input class="sb-search-submit" type="submit" value="">
+						<span class="sb-icon-search"> </span>
+					</form>
+			   </div>
+			</div>
+			<div class="clearfix"> </div>
+			   <!-- search-scripts -->
+					<script src="{%static 'web/js/classie.js' %}"></script>
+					<script src="{%static 'web/js/uisearch.js' %}"></script>
+						<script>
+							new UISearch( document.getElementById( 'sb-search' ) );
+						</script>
+			  <!-- //search-scripts -->
+		</div>
+		
+		<div class="clearfix"> </div>
+		</div>
+	</div>
+</div>
+<!--header end here-->
+
+<!--banner strip start here-->
+<script src="{%static 'web/js/responsiveslides.min.js' %}"></script>
+<script>
+    $(function () {
+      $("#slider").responsiveSlides({
+      	auto: true,
+      	speed: 500,
+        namespace: "callbacks",
+        pager: false,
+        nav:true,
+      });
+    });
+  </script>
+
+<div class="banner">
+	<div class="container">
+		<div class="banner-main">
+			<ul class="rslides" id="slider">
+	        <li>
+	  			<h3>Bidbees Online Auction House</h3>
+				<p>Secure, Transparent and Tamerproof.</p>
+                <p>Find Your needs and Bid according to your choice.</p>
+
+				<div class="bann-btn">
+					  <a href="#" class="hvr-shutter-out-horizontal">See More</a>
+               </div>
+	        </li>
+	       <li>
+	  			<h3>Bidbees Online Auction House</h3>
+				<p>Secure, Transparent and Tamerproof.</p>
+                 <p>Find Your needs and Bid according to your choice.</p>
+				<div class="bann-btn">
+					  <a href="#" class="hvr-shutter-out-horizontal">See More</a>
+               </div>
+	        </li>
+	        <li>
+						<h3>Bidbees Online Auction House</h3>
+						<p>Secure, Transparent and Tamerproof.</p>
+				<div class="bann-btn">
+					  <a href="#" class="hvr-shutter-out-horizontal">See More</a>
+               </div>
+	        </li>
+	      </ul>
+		</div>
+	</div>
+</div>
+<div class="banner-strip">
+
+</div>
+<!--banner strip end here--> 
+<!--services start here-->
+<div class="services">
+	<div class="container">
+		<div class="services-main">
+			<div class="services-top">
+				<h3>Auctions</h3>
+				<p>Bid for the best product!</p>
+			</div>
+			<div class="services-bottom">
+				<div class="row">
+					  <div class="col-sm-6 col-md-4 ser">
+					<div class="thumbnail">
+					  <a href="single/"><img src="{%static 'web/images/g2.jpg' %}" alt=""></a>
+					  <div class="caption">
+					    <a href="single/"><h3>Product1</h3></a>
+					    <p> OFFICIAL✔️FREE SHIPPING✔️SAVE ON MARKDOWN✔️BEST SELLER </p> <bidbox>
+							<span class="price"><span class="auction-price current-bid" data-auction-id="2342" data-bid="900000000" data-status="running"><span class="current auction">Current bid:</span> <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>200</span></span></span>
+					 </bidbox>
+
+					 <p id="dem">2 days left</p>
+
+
+					 <style>
+				.bidbox{	 
+					 background-color: #1F2C45;
+    color: #fff
+				} 
+					 
+					 </style>
+<div>  
+
+	
+	<script>
+	// Set the date we're counting down to
+	var countDownDate = new Date("June 5, 2019 15:37:25").getTime();
+	
+	// Update the count down every 1 second
+	var x = setInterval(function() {
+	
+		// Get todays date and time
+		var now = new Date().getTime();
+			
+		// Find the distance between now and the count down date
+		var distance = countDownDate - now;
+			
+		// Time calculations for days, hours, minutes and seconds
+		var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			
+		// Output the result in an element with id="demo"
+		document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+		+ minutes + "m " + seconds + "s ";
+			
+		// If the count down is over, write some text 
+		if (distance < 0) {
+			clearInterval(x);
+			document.getElementById("demo").innerHTML = "EXPIRED";
+		}
+	}, 1000);
+	</script>  
+	
+
+	<script>
+		// Set the date we're counting down to
+		var countDownDate = new Date("Jan 11, 2019 15:37:25").getTime();
+		
+		// Update the count down every 1 second
+		var x = setInterval(function() {
+		
+			// Get todays date and time
+			var now = new Date().getTime();
+				
+			// Find the distance between now and the count down date
+			var distance = countDownDate - now;
+				
+			// Time calculations for days, hours, minutes and seconds
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+				
+			// Output the result in an element with id="demo"
+			document.getElementById("demo1").innerHTML = days + "d " + hours + "h "
+			+ minutes + "m " + seconds + "s ";
+				
+			// If the count down is over, write some text 
+			if (distance < 0) {
+				clearInterval(x);
+				document.getElementById("demo1").innerHTML = "EXPIRED";
+			}
+		}, 1000);
+		</script>
+
+
+<script>
+	// Set the date we're counting down to
+	var countDownDate = new Date("Jan 11, 2019 15:37:25").getTime();
+	
+	// Update the count down every 1 second
+	var x = setInterval(function() {
+	
+		// Get todays date and time
+		var now = new Date().getTime();
+			
+		// Find the distance between now and the count down date
+		var distance = countDownDate - now;
+			
+		// Time calculations for days, hours, minutes and seconds
+		var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			
+		// Output the result in an element with id="demo"
+		document.getElementById("demo2").innerHTML = days + "d " + hours + "h "
+		+ minutes + "m " + seconds + "s ";
+			
+		// If the count down is over, write some text 
+		if (distance < 0) {
+			clearInterval(x);
+			document.getElementById("demo2").innerHTML = "EXPIRED";
+		}
+	}, 1000);
+	</script>
+
+<script>
+	// Set the date we're counting down to
+	var countDownDate = new Date("Jan 11, 2019 15:37:25").getTime();
+	
+	// Update the count down every 1 second
+	var x = setInterval(function() {
+	
+		// Get todays date and time
+		var now = new Date().getTime();
+			
+		// Find the distance between now and the count down date
+		var distance = countDownDate - now;
+			
+		// Time calculations for days, hours, minutes and seconds
+		var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			
+		// Output the result in an element with id="demo"
+		document.getElementById("demo3").innerHTML = days + "d " + hours + "h "
+		+ minutes + "m " + seconds + "s ";
+			
+		// If the count down is over, write some text 
+		if (distance < 0) {
+			clearInterval(x);
+			document.getElementById("demo3").innerHTML = "EXPIRED";
+		}
+	}, 1000);
+	</script>
+
+
+<script>
+	// Set the date we're counting down to
+	var countDownDate = new Date("June 4, 2019 15:37:25").getTime();
+	
+	// Update the count down every 1 second
+	var x = setInterval(function() {
+	
+		// Get todays date and time
+		var now = new Date().getTime();
+			
+		// Find the distance between now and the count down date
+		var distance = countDownDate - now;
+			
+		// Time calculations for days, hours, minutes and seconds
+		var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			
+		// Output the result in an element with id="demo"
+		document.getElementById("demo4").innerHTML = days + "d " + hours + "h "
+		+ minutes + "m " + seconds + "s ";
+			
+		// If the count down is over, write some text 
+		if (distance < 0) {
+			clearInterval(x);
+			document.getElementById("demo4").innerHTML = "EXPIRED";
+		}
+	}, 1000);
+	</script>
+
+
+
+<script>
+	// Set the date we're counting down to
+	var countDownDate = new Date("June 5, 2019 15:37:25").getTime();
+	
+	// Update the count down every 1 second
+	var x = setInterval(function() {
+	
+		// Get todays date and time
+		var now = new Date().getTime();
+			
+		// Find the distance between now and the count down date
+		var distance = countDownDate - now;
+			
+		// Time calculations for days, hours, minutes and seconds
+		var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			
+		// Output the result in an element with id="demo"
+		document.getElementById("demo3").innerHTML = days + "d " + hours + "h "
+		+ minutes + "m " + seconds + "s ";
+			
+		// If the count down is over, write some text 
+		if (distance < 0) {
+			clearInterval(x);
+			document.getElementById("demo3").innerHTML = "EXPIRED";
+		}
+	}, 1000);
+	</script>
+
+
+
+<script>
+	// Set the date we're counting down to
+	var countDownDate = new Date("June 5, 2019 15:37:25").getTime();
+	
+	// Update the count down every 1 second
+	var x = setInterval(function() {
+	
+		// Get todays date and time
+		var now = new Date().getTime();
+			
+		// Find the distance between now and the count down date
+		var distance = countDownDate - now;
+			
+		// Time calculations for days, hours, minutes and seconds
+		var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			
+		// Output the result in an element with id="demo"
+		document.getElementById("demo5").innerHTML = days + "d " + hours + "h "
+		+ minutes + "m " + seconds + "s ";
+			
+		// If the count down is over, write some text 
+		if (distance < 0) {
+			clearInterval(x);
+			document.getElementById("demo5").innerHTML = "EXPIRED";
+		}
+	}, 1000);
+	</script>
+
+
+
+<script>
+	// Set the date we're counting down to
+	var countDownDate = new Date("Jan 11, 2019 15:37:25").getTime();
+	
+	// Update the count down every 1 second
+	var x = setInterval(function() {
+	
+		// Get todays date and time
+		var now = new Date().getTime();
+			
+		// Find the distance between now and the count down date
+		var distance = countDownDate - now;
+			
+		// Time calculations for days, hours, minutes and seconds
+		var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			
+		// Output the result in an element with id="demo"
+		document.getElementById("demo6").innerHTML = days + "d " + hours + "h "
+		+ minutes + "m " + seconds + "s ";
+			
+		// If the count down is over, write some text 
+		if (distance < 0) {
+			clearInterval(x);
+			document.getElementById("demo6").innerHTML = "EXPIRED";
+		}
+	}, 1000);
+	</script>
+
+
+
+
+<script>
+	// Set the date we're counting down to
+	var countDownDate = new Date("Jan 11, 2019 15:37:25").getTime();
+	
+	// Update the count down every 1 second
+	var x = setInterval(function() {
+	
+		// Get todays date and time
+		var now = new Date().getTime();
+			
+		// Find the distance between now and the count down date
+		var distance = countDownDate - now;
+			
+		// Time calculations for days, hours, minutes and seconds
+		var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			
+		// Output the result in an element with id="demo"
+		document.getElementById("demo7").innerHTML = days + "d " + hours + "h "
+		+ minutes + "m " + seconds + "s ";
+			
+		// If the count down is over, write some text 
+		if (distance < 0) {
+			clearInterval(x);
+			document.getElementById("demo7").innerHTML = "EXPIRED";
+		}
+	}, 1000);
+	</script>
+
+
+
+<script>
+	// Set the date we're counting down to
+	var countDownDate = new Date("Jan 11, 2019 15:37:25").getTime();
+	
+	// Update the count down every 1 second
+	var x = setInterval(function() {
+	
+		// Get todays date and time
+		var now = new Date().getTime();
+			
+		// Find the distance between now and the count down date
+		var distance = countDownDate - now;
+			
+		// Time calculations for days, hours, minutes and seconds
+		var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			
+		// Output the result in an element with id="demo"
+		document.getElementById("demo8").innerHTML = days + "d " + hours + "h "
+		+ minutes + "m " + seconds + "s ";
+			
+		// If the count down is over, write some text 
+		if (distance < 0) {
+			clearInterval(x);
+			document.getElementById("demo8").innerHTML = "EXPIRED";
+		}
+	}, 1000);
+	</script>
+
+
+
+
+<script>
+	// Set the date we're counting down to
+	var countDownDate = new Date("Jan 11, 2019 15:37:25").getTime();
+	
+	// Update the count down every 1 second
+	var x = setInterval(function() {
+	
+		// Get todays date and time
+		var now = new Date().getTime();
+			
+		// Find the distance between now and the count down date
+		var distance = countDownDate - now;
+			
+		// Time calculations for days, hours, minutes and seconds
+		var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			
+		// Output the result in an element with id="demo"
+		document.getElementById("demo9").innerHTML = days + "d " + hours + "h "
+		+ minutes + "m " + seconds + "s ";
+			
+		// If the count down is over, write some text 
+		if (distance < 0) {
+			clearInterval(x);
+			document.getElementById("demo9").innerHTML = "EXPIRED";
+		}
+	}, 1000);
+	</script>
+
+
+
+<script>
+	// Set the date we're counting down to
+	var countDownDate = new Date("Jan 11, 2019 15:37:25").getTime();
+	
+	// Update the count down every 1 second
+	var x = setInterval(function() {
+	
+		// Get todays date and time
+		var now = new Date().getTime();
+			
+		// Find the distance between now and the count down date
+		var distance = countDownDate - now;
+			
+		// Time calculations for days, hours, minutes and seconds
+		var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			
+		// Output the result in an element with id="demo"
+		document.getElementById("demo10").innerHTML = days + "d " + hours + "h "
+		+ minutes + "m " + seconds + "s ";
+			
+		// If the count down is over, write some text 
+		if (distance < 0) {
+			clearInterval(x);
+			document.getElementById("demo10").innerHTML = "EXPIRED";
+		}
+	}, 1000);
+	</script>
+
+
+
+<script>
+	// Set the date we're counting down to
+	var countDownDate = new Date("Jan 11, 2019 15:37:25").getTime();
+	
+	// Update the count down every 1 second
+	var x = setInterval(function() {
+	
+		// Get todays date and time
+		var now = new Date().getTime();
+			
+		// Find the distance between now and the count down date
+		var distance = countDownDate - now;
+			
+		// Time calculations for days, hours, minutes and seconds
+		var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			
+		// Output the result in an element with id="demo"
+		document.getElementById("demo1").innerHTML = days + "d " + hours + "h "
+		+ minutes + "m " + seconds + "s ";
+			
+		// If the count down is over, write some text 
+		if (distance < 0) {
+			clearInterval(x);
+			document.getElementById("demo1").innerHTML = "EXPIRED";
+		}
+	}, 1000);
+	</script>
+
+
+
+
+<script>
+	// Set the date we're counting down to
+	var countDownDate = new Date("Jan 11, 2019 15:37:25").getTime();
+	
+	// Update the count down every 1 second
+	var x = setInterval(function() {
+	
+		// Get todays date and time
+		var now = new Date().getTime();
+			
+		// Find the distance between now and the count down date
+		var distance = countDownDate - now;
+			
+		// Time calculations for days, hours, minutes and seconds
+		var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			
+		// Output the result in an element with id="demo"
+		document.getElementById("demo1").innerHTML = days + "d " + hours + "h "
+		+ minutes + "m " + seconds + "s ";
+			
+		// If the count down is over, write some text 
+		if (distance < 0) {
+			clearInterval(x);
+			document.getElementById("demo1").innerHTML = "EXPIRED";
+		}
+	}, 1000);
+	</script>
+
+
+
+<script>
+	// Set the date we're counting down to
+	var countDownDate = new Date("Jan 11, 2019 15:37:25").getTime();
+	
+	// Update the count down every 1 second
+	var x = setInterval(function() {
+	
+		// Get todays date and time
+		var now = new Date().getTime();
+			
+		// Find the distance between now and the count down date
+		var distance = countDownDate - now;
+			
+		// Time calculations for days, hours, minutes and seconds
+		var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			
+		// Output the result in an element with id="demo"
+		document.getElementById("demo1").innerHTML = days + "d " + hours + "h "
+		+ minutes + "m " + seconds + "s ";
+			
+		// If the count down is over, write some text 
+		if (distance < 0) {
+			clearInterval(x);
+			document.getElementById("demo1").innerHTML = "EXPIRED";
+		}
+	}, 1000);
+	</script>
+
+	
+
+
+
+
+
+
+</div>
+
+
+
+						</div>
+					</div>
+					  </div>
+					   <div class="col-sm-6 col-md-4 ser">
+					<div class="thumbnail">
+					  <a href="single/"><img src="{%static 'web/images/g3.jpg' %}" alt=""></a>
+					  <div class="caption">
+					   <a href="single/"> <h3>Accusantium doloremque</h3></a>
+					    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+						</div>
+						<bidbox>
+							<span class="price"><span class="auction-price current-bid" data-auction-id="2342" data-bid="900000000" data-status="running"><span class="current auction">Current bid:</span> <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>90000</span></span></span>
+					 </bidbox>
+
+					 <p id="demo1"></p>
+					</div>
+
+					
+					  </div>
+					   <div class="col-sm-6 col-md-4 ser">
+					<div class="thumbnail">
+					  <a href="single/"><img src="{%static 'web/images/g4.jpg' %}" alt=""></a>
+					  <div class="caption">
+					    <a href="single/"><h3>Thumbnail label</h3></a>
+					    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+					  </div>
+					</div>
+
+					<bidbox>
+						<span class="price"><span class="auction-price current-bid" data-auction-id="2342" data-bid="900000000" data-status="running"><span class="current auction">Current bid:</span> <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>90000</span></span></span>
+				 </bidbox>
+
+				 <p id="demo2"></p>
+
+
+					  </div>
+				   <div class="clearfix"> </div>
+				</div>
+				<div class="row">
+					  <div class="col-sm-6 col-md-4 ser">
+					<div class="thumbnail">
+					  <a href="single/"><img src="{%static 'web/images/g5.jpg' %}" alt=""></a>
+					  <div class="caption">
+					    <a href="single/"><h3>Lorem ipsum dolor</h3></a>
+					    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+					  </div>
+					</div>
+
+					<bidbox>
+						<span class="price"><span class="auction-price current-bid" data-auction-id="2342" data-bid="900000000" data-status="running"><span class="current auction">Current bid:</span> <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>90000</span></span></span>
+				 </bidbox>
+
+				 <p id="demo3"></p>
+
+					  </div>
+					   <div class="col-sm-6 col-md-4 ser">
+					<div class="thumbnail">
+					 <a href="single/"> <img src="{%static 'web/images/g6.jpg' %}" alt=""></a>
+					  <div class="caption">
+					   <a href="single/"> <h3>Established fact</h3></a>
+					    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+					  </div>
+					</div>
+
+
+					<bidbox>
+						<span class="price"><span class="auction-price current-bid" data-auction-id="2342" data-bid="900000000" data-status="running"><span class="current auction">Current bid:</span> <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>90000</span></span></span>
+				 </bidbox>
+
+				 <p id="demo4"></p>
+
+					  </div>
+					   <div class="col-sm-6 col-md-4 ser">
+					<div class="thumbnail">
+					  <a href="single/"><img src="{%static 'web/images/g7.jpg' %}" alt=""></a>
+					  <div class="caption">
+					    <a href="single/"><h3>Neque porro quisquam</h3></a>
+					    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+						</div>
+						
+
+						<bidbox>
+							<span class="price"><span class="auction-price current-bid" data-auction-id="2342" data-bid="900000000" data-status="running"><span class="current auction">Current bid:</span> <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>90000</span></span></span>
+					 </bidbox>
+
+					 <p id="demo5"></p>
+
+					</div>
+					  </div>
+				   <div class="clearfix"> </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--services end here-->
+<!--fetures start here-->
+
+</div>
+
+
+
+
+
+
+
+
+<div class="purchase">
+	<div class="container">
+		<div class="purchase-main">
+			<div class="purchase-left">
+				<h3>Best products from all over the world</h3>
+					</div>
+			<div class="purchase-right">
+				<a href="product-list.html" class="hvr-shutter-out-horizontal">See More</a>
+			</div>
+		 <div class="clearfix"> </div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+<!--features end here-->
+<!--effec start here-->
+
+<!--effec end here-->
+<!--project star here-->
+<link rel="stylesheet" type="text/css" href="{%static 'web/css/magnific-popup.css' %}">
+			<script type="text/javascript" src="{%static 'web/js/nivo-lightbox.min.js' %}"></script>
+				<script type="text/javascript">
+				$(document).ready(function(){
+				    $('#nivo-lightbox-demo a').nivoLightbox({ effect: 'fade' });
+				});
+				</script>
+<div class="project">
+	<div class="container">
+		<div class="project-main">
+			<div class="project-top">
+				<h3>Recommended</h3>
+				<p>Secure , Transparent and tamperproof</p>
+			</div>
+			<div class="project-bottom">
+				<div class="col-md-3 project-grid">
+						<div class="project-eff">
+						<div id="nivo-lightbox-demo"> <p> <a href="{%static 'web/images/p1.jpg' %}" data-lightbox-gallery="gallery1" id="nivo-lightbox-demo"> <span class="rollover1"> </span></a> </p></div>
+									  	<img class="img-responsive" src="{%static 'web/images/p1.jpg' %}" alt="">
+							  </div>
+                   		<div class="project-details">
+							<h4>sint occaeca</h4>
+							<p>Lorem ipsum dolor sit amet</p>
+						</div>
+						<bidbox>
+							<span class="price"><span class="auction-price current-bid" data-auction-id="2342" data-bid="900000000" data-status="running"><span class="current auction">Current bid:</span> <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>90000</span></span></span>
+					 </bidbox>
+
+					 <p id="demo6"></p>					
+					</div>
+
+					<div class="col-md-3 project-grid">
+						<div class="project-eff">
+						<div id="nivo-lightbox-demo"> <p> <a href="images/p2.jpg"data-lightbox-gallery="gallery1" id="nivo-lightbox-demo"> <span class="rollover1"> </span></a> </p></div>     
+									  	<img class="img-responsive" src="{%static 'web/images/p2.jpg' %}" alt="">
+						</div>
+						<div class="project-details">
+							<h4>Neque quisquam</h4>
+							<p>Lorem ipsum dolor sit amet</p>	
+						</div>	
+						<bidbox>
+							<span class="price"><span class="auction-price current-bid" data-auction-id="2342" data-bid="900000000" data-status="running"><span class="current auction">Current bid:</span> <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>90000</span></span></span>
+					 </bidbox>
+
+					 <p id="demo7"></p>				
+					</div>
+					<div class="col-md-3 project-grid">
+						<div class="project-eff">
+						<div id="nivo-lightbox-demo"> <p> <a href="{%static 'web/images/p3.jpg' %}" data-lightbox-gallery="gallery1" id="nivo-lightbox-demo"> <span class="rollover1"> </span></a> </p></div>
+									  	<img class="img-responsive" src="{%static 'web/images/p3.jpg' %}" alt="">
+							   
+						</div>
+						 <div class="project-details">
+							<h4> Malorum</h4>
+							<p>Lorem ipsum dolor sit amet</p>	
+						</div>		
+						<bidbox>
+							<span class="price"><span class="auction-price current-bid" data-auction-id="2342" data-bid="900000000" data-status="running"><span class="current auction">Current bid:</span> <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>90000</span></span></span>
+					 </bidbox>
+
+					 <p id="demo8"></p>			
+					</div>
+					<div class="col-md-3 project-grid">
+						<div class="project-eff">
+						<div id="nivo-lightbox-demo"> <p> <a href="{%static 'web/images/p4.jpg' %}" data-lightbox-gallery="gallery1" id="nivo-lightbox-demo"> <span class="rollover1"> </span></a> </p></div>
+									  	<img class="img-responsive" src="{%static 'web/images/p4.jpg' %}" alt="">
+						</div>
+						<div class="project-details">
+							<h4>Aldus PageMake</h4>
+							<p>Lorem ipsum dolor sit amet</p>	
+						</div>	
+						<bidbox>
+							<span class="price"><span class="auction-price current-bid" data-auction-id="2342" data-bid="900000000" data-status="running"><span class="current auction">Current bid:</span> <span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$</span>90000</span></span></span>
+					 </bidbox>
+
+					 <p id="demo9"></p>				
+					</div>
+			<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!--project end here-->
+<!--clients start here-->
+
+<!-- FlexSlider -->
+				  <script defer src="js/jquery.flexslider.js"></script>
+				  <script type="text/javascript">
+					$(function(){
+					  SyntaxHighlighter.all();
+					});
+					$(window).load(function(){
+					  $('.flexslider').flexslider({
+						animation: "slide",
+						start: function(slider){
+						  $('body').removeClass('loading');
+						}
+					  });
+					});
+				  </script>
+			<!-- FlexSlider -->
+<!--clients end here-->
+<!--purchase start here-->
+
+<!--purchase end here-->
+<!--footer start here-->
+<div class="footer">
+	<div class="container">
+		<div class="footer-main">
+			<div class="col-md-3 footer-grid">
+				<h3>About us</h3>
+				<p>About your Services</p>
+			</div>
+
+			<div class="col-md-3 footer-grid">
+				<h3></h3>
+				<ul>
+			
+				</ul>
+			</div>
+			<div class="col-md-3 footer-grid">
+				<h3>Recommended Products</h3>
+				<div class="ftr-gd4-img">
+				    <div class="col-md-3 ftr-gd4-1"><a href="#"><img src="{%static 'web/images/f1.jpg' %}" alt=""></a></div>
+				    <div class="col-md-3 ftr-gd4-1"><a href="#"><img src="{%static 'web/images/f2.jpg' %}" alt=""></a></div>
+				    <div class="col-md-3 ftr-gd4-1"><a href="#"><img src="{%static 'web/images/f3.jpg' %}" alt=""></a></div>
+				    <div class="col-md-3 ftr-gd4-1"><a href="#"><img src="{%static 'web/images/f4.jpg' %}" alt=""></a></div>
+				  <div class="clearfix"> </div>
+				</div>
+				<div class="ftr-gd4-img">
+				    <div class="col-md-3 ftr-gd4-1"><a href="#"><img src="{%static 'web/images/f5.jpg' %}" alt=""></a></div>
+				    <div class="col-md-3 ftr-gd4-1"><a href="#"><img src="{%static 'web/images/f6.jpg' %}" alt=""></a></div>
+				    <div class="col-md-3 ftr-gd4-1"><a href="#"><img src="{%static 'web/images/f7.jpg' %}" alt=""></a></div>
+				    <div class="col-md-3 ftr-gd4-1"><a href="#"><img src="{%static 'web/images/f8.jpg' %}" alt=""></a></div>
+				  <div class="clearfix"> </div>
+				</div>
+				<div class="ftr-gd4-img">
+				    <div class="col-md-3 ftr-gd4-1"><a href="#"><img src="{%static 'web/images/f9.jpg' %}" alt=""></a></div>
+				    <div class="col-md-3 ftr-gd4-1"><a href="#"><img src="{%static 'web/images/f10.jpg' %}" alt=""></a></div>
+				    <div class="col-md-3 ftr-gd4-1"><a href="#"><img src="{%static 'web/images/f11.jpg' %}" alt=""></a></div>
+				    <div class="col-md-3 ftr-gd4-1"><a href="#"><img src="{%static 'web/images/f12.jpg' %}" alt=""></a></div>
+				  <div class="clearfix"> </div>
+				</div>
+			</div>
+		<div class="clearfix"> </div>
+		</div>
+	</div>
+	<div class="copyright">
+	<div class="container">
+		<div class="copy-main">
+			<span>Developed By: Ariz Asif and Company </span>
+
+			<div class="copy-right"> 
+				<ul>
+					<li><a class="active" href="http://127.0.0.1:8000/">Home</a></li>/
+					<li><a href="about/">About</a></li>/
+			
+					<li><a href="contact/">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<!--footer end here-->
+</body>
+</html>

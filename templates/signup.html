@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+{% load static %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+
+<html>
+{% load static %}
+<head>
+    <title>BidBeavers | Registration </title>
+    <link href="{% static 'web/css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="{%static 'web/js/jquery-1.11.0.min.js' %}"></script>
+    <!-- Custom Theme files -->
+    <link href="{%static 'web/css/style.css' %}" rel="stylesheet" type="text/css" media="all"/>
+    <link rel="stylesheet" href="{%static 'web/css/flexslider.css' %}" type="text/css" media="screen"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Custom Theme files -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);function hideURLbar(){ window.scrollTo(0,1); }>
+
+    </script>
+    <!-- start-smoth-scrolling -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{%static 'web/js/move-top.js' %}"></script>
+    <script type="text/javascript" src="{%static 'web/js/easing.js' %}"></script>
+    <script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+
+    </script>
+    <style>
+
+	#cover {
+    #background: #222 url('https://unsplash.it/1920/1080/?random') center center no-repeat;
+    background: #fbfad4 url('{%static 'web/images/background7.jpeg' %}') center center no-repeat;
+    background-size: cover;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+#cover-caption {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+/* only used for background overlay not needed for centering */
+form:before {
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: rgba(255,255,240);
+    z-index: -1;
+    border-radius: 10px;
+}
+
+
+    </style>
+</head>
+<body>
+<!-- //end-smoth-scrolling -->
+<!--header start here-->
+<div class="header">
+    <div class="container">
+        <div class="header-main">
+            <div class="head-right">
+                <div class="top-nav">
+                    <span class="menu"> <img src="{%static 'web/images/icon.png' %}" alt=""/></span>
+                    <ul class="res">
+                        <li><a></a></li>
+                        <li><a></a></li>
+                        <li><a></a></li>
+                        <li><a></a></li>
+                        <li><a></a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/contact/">Contact</a></li>
+                        <li><a class="active" href="/accounts/login/">Login</a></li>
+                    </ul>
+                    <!-- script-for-menu -->
+                    <script>
+							   $( "span.menu" ).click(function() {
+								 $( "ul.res" ).slideToggle( 300, function() {
+								 // Animation complete.
+								  });
+								 });
+
+                    </script>
+                    <!-- /script-for-menu -->
+                </div>
+
+                <div class="social">
+                    <ul>
+                        <li><a class="fa" href="https://www.facebook.com/ariz.asif.5"> </a></li>
+                        <li><a class="tw" href="#"> </a></li>
+                        <li><a class="p" href="#"> </a></li>
+                    </ul>
+                </div>
+
+                <div class="clearfix"></div>
+                <!-- search-scripts -->
+                <script src="{%static 'web/js/classie.js' %}"></script>
+                <script src="{%static 'web/js/uisearch.js' %}"></script>
+                <script>
+							new UISearch( document.getElementById( 'sb-search' ) );
+
+                </script>
+                <!-- //search-scripts -->
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<!--header end here-->
+
+
+<section id="cover" class="min-vh-100 ftco-section contact-section bg-dark" style="">
+    <div class="container">
+        <div class="row block-9" id="cover-caption">
+            <div class="col-md-6 order-md-last d-flex" style="margin-left:25%">
+                <form action="/signup/" class="bg-white p-5 contact-form" method='post' id="signup">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <div class="form-group">
+
+                    </div>
+                    <div class="form-group">
+                        <label class="container">
+                            <input type="radio" checked="checked" name="rad" id="S" value="S" required>
+                            Seller
+                            <span class="checkmark"></span>
+                        </label></div>
+                    <div class="form-group">
+                        <label class="container">
+                            <input type="radio" name="rad" id="B" value="B">
+                            Buyer
+                            <span class="checkmark"></span>
+                        </label></div>
+                    <div class="form-group">
+                        <input type="submit" id="submit" value="Sign up" class="btn btn-primary py-3 px-5">
+                        <a href="/Gsignup/"><input type="button" value="Click to Sign up as Guest"
+                                                   class="btn btn-primary py-3 px-5"></a>
+                        <span class="mr-3 col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4"
+                              style="margin-left:22.5%;"><a href="/accounts/login/">Already have an account..Login.!</a></span>
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+    </div>
+</section>
+
+
+<!--<div class="footer">-->
+<!--    <div class="copyright">-->
+<!--        <div class="container">-->
+<!--            <div class="copy-main">-->
+<!--                <span>Developed By: Ariz Asif and Company </span>-->
+
+<!--                <div class="copy-right">-->
+<!--                    <ul>-->
+<!--                        <li><a class="active" href="/">Home</a></li>-->
+<!--                        /-->
+<!--                        <li><a href="about/">About</a></li>-->
+<!--                        /-->
+
+<!--                        <li><a href="contact/">Contact</a></li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<!--footer end here-->
+</body>
+</html>
+
+
+
+
+
+
+
+
